@@ -1,0 +1,61 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Header
+{
+    padding: 20px;   
+    display: flex;
+}
+
+.Title
+{
+    width: 30%;
+}
+
+.Navbar
+{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.Menu
+{
+    display: flex;
+}
+
+.Menu a
+{
+    display: flex;
+    margin-right: 50px;
+    align-items: center;
+    align-self: center;
+    text-decoration: none;
+    color: black;
+    border: 1px white;
+}
+
+.Menu a:hover
+{
+    color: #f5af00;
+}
+
+.Menu a:active
+{
+    border-bottom: 2px #f5af00 dashed;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
