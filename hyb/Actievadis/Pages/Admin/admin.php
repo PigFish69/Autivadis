@@ -7,37 +7,29 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <body>
     <div class="containerTable">
-        <h3 class="bold">Klanten</h3>
-        <table id="userTable" class="table table-striped tableKlant">
+        <h3 class="bold">Activiteiten</h3>
+        <table id="activityTable" class="table table-striped">
             <thead>
                 <tr>
                     <th>Naam</th>
                     <th>Locatie</th>
-                    <th>Email</th>
-                    <th>Volle naam</th>
-                    <th>Admin</th>
+                    <th>Voedsel</th>
+                    <th>Prijs</th>
+                    <th>Start tijd</th>
                     <th>Functies</th>
                 </tr>
             </thead>
             <tbody>
-                <?php
-                $users = db_getData("SELECT * FROM `users`");
-                while ($userData = $users->fetch_assoc()) { ?>
-                    <tr>
-                        <td><?php echo $userData['Username'] ?></td>
-                        <td><?php echo $userData['Password'] ?></td>
-                        <td><?php echo $userData['Email'] ?></td>
-                        <td><?php echo $userData['Fname'] . " " . $userData['Lname'] ?></td>
-                        <td><?php echo $userData['Admin'] ?></td>
-                        <td>
-                            <button style="background-color: #a3f4a3;" class="btnEdit" id="<?php echo $userData['Id'] ?>"><i class="bi bi-pencil-square"></i></button>
-                            <button style="background-color: #f996b5;" class="btnDelete" id="<?php echo $userData['Id'] ?>"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-
-                <?php
-                }
-                ?>
+                <tr>
+                    <td>Bowlen</td>
+                    <td>Eibergen</td>
+                    <td>Nee</td>
+                    <td>€12.50</td>
+                    <td>9/11/2023 20:04</td>
+                    <td>
+                        <button class="btnMoreInfo" title="Meer info"><i class="bi bi-three-dots"></i></button>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -49,5 +41,16 @@
     $(document).ready(() => {
         //gebruikte deze video (destijds)
         //https://youtu.be/BIurvEtcev4
+
+        $('#activityTable').DataTable({
+            "columns": [
+                {"data": "username"},
+                {"data": "password"},
+                {"data": "email"},
+                {"data": "fullName"},
+                {"data": "admin"},
+                {"data": "functions"}
+            ]
+        });
     })
 </script>
