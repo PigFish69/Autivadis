@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 06 sep 2023 om 13:26
+-- Gegenereerd op: 06 sep 2023 om 14:17
 -- Serverversie: 10.4.20-MariaDB
 -- PHP-versie: 8.0.9
 
@@ -24,23 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `activities`
---
-
-CREATE TABLE `activities` (
-  `id` int(11) NOT NULL,
-  `name` varchar(60) NOT NULL,
-  `location` varchar(255) NOT NULL,
-  `food` tinyint(1) NOT NULL,
-  `price` double NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `startTime` datetime NOT NULL,
-  `endTime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Tabelstructuur voor tabel `user`
 --
 
@@ -56,12 +39,6 @@ CREATE TABLE `user` (
 --
 
 --
--- Indexen voor tabel `activities`
---
-ALTER TABLE `activities`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexen voor tabel `user`
 --
 ALTER TABLE `user`
@@ -70,12 +47,6 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
-
---
--- AUTO_INCREMENT voor een tabel `activities`
---
-ALTER TABLE `activities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
