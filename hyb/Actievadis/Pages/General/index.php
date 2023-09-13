@@ -1,9 +1,14 @@
 <?php
+require_once "header.php";
+require_once "../Database/activityFunctions.php";
+
 $currentDate = date('d-m-Y');
 $newDate = date('d-m-Y', strtotime('+1 month'));
+
+$dateActivities = getDateActivities($currentDate, $newDate);
   
- echo $currentDate;
- echo $newDate;
+echo $dateActivities;
+echo $newDate;
 ?>
 <html>
     <head>
@@ -15,7 +20,10 @@ $newDate = date('d-m-Y', strtotime('+1 month'));
         </h1>
 
         <div>
-            <h2></h2>
+            
         </div>
     </body>
 </html>
+<?php
+require_once "footer.php";
+?>
