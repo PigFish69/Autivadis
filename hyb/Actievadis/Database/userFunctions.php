@@ -10,4 +10,10 @@ function getUser($username, $password){
     return "No user found!";
 }
 
+function insertUser($username, $password){
+
+    $result = db_insertData("INSERT INTO user (username, password) VALUES ('$username', '$password')");
+    return $result;
+}
+
 ?>
