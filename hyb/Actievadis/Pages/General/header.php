@@ -6,7 +6,7 @@
     <body>
         <div class="Header">
             <div class="Title">
-                <img src="../Images/ImgLogo.png" width="200px">
+                <img src="../../Images/ImgLogo.png" width="200px">
             </div>
             <nav class="Navbar">
                 <ul class="Menu">
