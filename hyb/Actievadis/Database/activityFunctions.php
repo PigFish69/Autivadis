@@ -2,16 +2,13 @@
 
 require_once ("databaseFunctions.php"); 
 
-function getDateActivities($current, $next)
+function getActivitysBetweenTime($current, $next)
 {
-    print_r("SELECT startTime FROM activity where startTime between '$current' and '$next'");    
-    return db_getData("SELECT startTime FROM activity where startTime between '$current' and '$next'");
-
-}
-
-function getNameActivities($current, $next)
-{
-    return db_getData("SELECT name FROM activity where startTime between '$current' and '$next'"); 
+    $activities = db_getData("SELECT * FROM activity where startTime between '$current' and '$next'");
+    if ($activities->num_rows > 0){
+        return $activities;
+    }
+    return "No activities found!"; 
 }
 
 ?>
