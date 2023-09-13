@@ -1,0 +1,22 @@
+/* 
+Colors
+Corvadis Blue #0f132f
+Corvadis Orange #f5af00
+Corvadis White #f8f8f8
+ */
+:root {
+    --color-white: #f8f8f8;
+    --color-Blue: #0f132f;
+    --color-Orange: #f5af00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-white);
+
+    --bs-table-color: green;
+    --bs-table-primary: var(--color-Blue);
+    --bs-table-striped-bg: var(--color-Orange);
+    --bs-table-accent-bg: var(--color-white);
+}

@@ -1,0 +1,11 @@
+.containerTable {
+    padding: 0 10%;
+}
+
+.containerTable h3 {
+    text-align: center;
+}
+.btnMoreInfo {
+    background-color: darkturquoise;
+    height: 30.21px;
+}
