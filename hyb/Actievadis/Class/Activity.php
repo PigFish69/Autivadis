@@ -33,6 +33,23 @@ class activity {
         }
     }
 
+    function setActivity($id, $name, $location, $food, $price, $description, $startTime, $endTime) 
+    {
+        try {
+            $this->id = $id;
+            $this->name = $name;
+            $this->location = $location;
+            $this->food = $food;
+            $this->price = $price;
+            $this->description = $description;
+            $this->startTime = $startTime;
+            $this->endTime = $endTime;
+        } catch (\Throwable $th) {
+            //throw $th;
+            echo "Error: ".$th;
+        }
+    }
+
     /**
      * Get the value of id
      */ 
