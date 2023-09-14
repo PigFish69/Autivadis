@@ -53,5 +53,5 @@ if(isset($_POST['submit']))
 </html>
 
 <?php
-// require_once "footer.php";
+require_once "footer.php";
 ?>
