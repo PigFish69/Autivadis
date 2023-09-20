@@ -1,5 +1,7 @@
 <?php
     //include header & shite
+    require_once "../General/header.php";
+    require_once "../../Database/activityFunctions.php";
 ?>
 <link rel="stylesheet" href="../../Css/admin.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
@@ -20,16 +22,19 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $activities = getAllActivities();
+                while ($activity = $activities->fetch_assoc()) {?>
                 <tr>
-                    <td>Bowlen</td>
-                    <td>Eibergen</td>
-                    <td>Nee</td>
-                    <td>€12.50</td>
-                    <td>9/11/2023 20:04</td>
+                    <td><?php echo $activity['name']?></td>
+                    <td><?php echo $activity['location']?></td>
+                    <td><?php echo $activity['food']?></td>
+                    <td><?php echo "€" . number_format((float)$activity['price'], 2, '.', '')?></td>
+                    <td><?php echo $activity['startTime']?></td>
                     <td>
                         <button class="btnMoreInfo" title="Meer info"><i class="bi bi-three-dots"></i></button>
                     </td>
                 </tr>
+                <?php }?>
             </tbody>
         </table>
     </div>
@@ -54,3 +59,6 @@
         });
     })
 </script>
+<?php 
+require_once "../General/footer.php";
+?>

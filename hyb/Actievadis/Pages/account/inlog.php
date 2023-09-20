@@ -1,5 +1,5 @@
 <?php
-// require_once "header.php";
+require_once "../General/header.php";
 require_once "../../Database/userFunctions.php";
 
 if(isset($_POST['submit']))
@@ -53,5 +53,5 @@ if(isset($_POST['submit']))
 </html>
 
 <?php
-// require_once "footer.php";
+require_once "footer.php";
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once "../header.php";
+require_once "../General/header.php";
 require_once "../../Database/userFunctions.php";
 
 if(isset($_POST['submit'])){
@@ -36,12 +36,12 @@ if(isset($_POST['submit'])){
             <div class="form-group">
                 <input type="submit" class="buttonPrimair" value="Submit" name="submit">
             </div>
-            <p>Heb je al een account? <a href="login.php" class="linkColorText">Login hier</a>.</p>
+            <p>Heb je al een account? <a href="inlog.php" class="linkColorText">Login hier</a>.</p>
         </form>
     </div>    
 </body>
 </html>
 
 <?php
-require_once "../footer.php";
+require_once "../General/footer.php";
 ?>
