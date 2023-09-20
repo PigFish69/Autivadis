@@ -1,7 +1,3 @@
-<?php
-include ('../../Database/userFunctions.php');
-?>
-
 <htlm>
     <link rel="stylesheet" href="../Css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Open+Sans:wght@600&family=Rubik:wght@500&display=swap" rel="stylesheet">
@@ -17,17 +13,6 @@ include ('../../Database/userFunctions.php');
                     <li class="headerli"><a href="#" class="headerA">Home</a></li>
                     <li class="headerli"><a href="#" class="headerA">Inloggen</a></li>
                     <li class="headerli"><a href="#" class="headerA">Registreren</a></li>
-
-                    <?php
-                if (isset($_COOKIE['CurrUser'])) {
-                    $user = new user(getUserById($_COOKIE['CurrUser']));
-
-                    if ($user->getAdmin()) { ?>
-                        <li><a href="../Admin/admin.php">Beheer</a></li>
-                <?php
-                    }
-                }
-                ?>
                 </ul>
             </nav>
         </div>

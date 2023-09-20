@@ -5,11 +5,6 @@ require_once "../../Database/userFunctions.php";
 if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $beheer   = $_POST['beheerPassword'];
-    if(!empty($beheer))
-    {
-        
-    }
 
     insertUser($username, $password);
 
@@ -48,18 +43,10 @@ if(isset($_POST['submit'])){
                 <label>Confirm Password</label>
                 <input type="password" name="confirm_password" class="form-control" value="">
             </div>
-            <!-- <div class="form-group" id="beheer">
-                <label>Beheer password</label>
-                <input type="password" name="beheerPassword" class="form-control" value="">
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="beheerCheck" class="form-check-input">
-                <label>klik voor beheer</label>
-            </div> -->
             <div class="form-group">
                 <input type="submit" class="btn btn-warning" value="Submit" name="submit">
             </div>
-            <p>Heb je al een account? <a href="inlog.php" class="linkColorText">Login hier</a>.</p>
+            <p>Heb je al een account? <a href="login.php" class="linkColorText">Login hier</a>.</p>
         </form>
     </div>    
 </body>
