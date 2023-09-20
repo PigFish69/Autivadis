@@ -29,5 +29,3 @@ function db_insertData($query){
     $mysqli->close();
     return $result;
 }
-
-?>
