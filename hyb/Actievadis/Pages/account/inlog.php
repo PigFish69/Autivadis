@@ -23,6 +23,7 @@ if(isset($_POST['submit']))
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+
 </head>
 <body>
     <div class="login">
@@ -44,9 +45,10 @@ if(isset($_POST['submit']))
                 <input type="password" name="password" class="form-control">
             </div>
             <div class="form-group">
-                <input type="submit" class="buttonPrimair" value="Login" name="submit">
+                <input type="submit" class="btn btn-warning" value="Login" name="submit">
             </div>
             <p>Nog geen account? <a class="linkColorText" href="signUp.php">Registreer nu</a>.</p>
+            
         </form>
     </div>
 </body>
