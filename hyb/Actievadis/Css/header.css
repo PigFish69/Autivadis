@@ -28,12 +28,12 @@ body {
     justify-content: end;
 }
 
-.Menu
+.MenuHeader
 {
     display: flex;
 }
 
-.Menu a
+.MenuHeader a
 {
     display: flex;
     margin-right: 50px;
@@ -44,18 +44,18 @@ body {
     border: 1px white;
 }
 
-.Menu a:hover
+.MenuHeader a:hover
 {
     color: #f5af00;
 }
 
-.Menu a:active
+.MenuHeader a:active
 {
     border-bottom: 2px #f5af00 dashed;
     color: black;
 }
 
-li {
+.headerli {
     list-style: none;
 }
 
