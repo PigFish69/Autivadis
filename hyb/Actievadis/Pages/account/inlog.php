@@ -15,7 +15,8 @@ if(isset($_POST['submit']))
     }else
     {
         // header('location: gebruikerspage.php');
-        echo "gelukt";
+        setcookie("CurrUser", (new user($user))->getId(), time() + 3600, "/", "");
+        print_r($_COOKIE['CurrUser']);
     }
 }
 ?>
@@ -55,5 +56,5 @@ if(isset($_POST['submit']))
 </html>
 
 <?php
-require_once "footer.php";
+// require_once "footer.php";
 ?>
