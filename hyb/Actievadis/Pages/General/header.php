@@ -8,11 +8,11 @@
             <div class="Title">
                 <img src="../../Images/ImgLogo.png" width="200px">
             </div>
-            <nav class="Navbar">
+            <nav class="Navheader">
                 <ul class="MenuHeader">
-                    <li class="headerli"><a href="#">Home</a></li>
-                    <li class="headerli"><a href="#">Inloggen</a></li>
-                    <li class="headerli"><a href="#">Registreren</a></li>
+                    <li class="headerli"><a href="#" class="headerA">Home</a></li>
+                    <li class="headerli"><a href="#" class="headerA">Inloggen</a></li>
+                    <li class="headerli"><a href="#" class="headerA">Registreren</a></li>
                 </ul>
             </nav>
         </div>
