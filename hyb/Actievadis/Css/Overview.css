@@ -20,3 +20,16 @@ Corvadis White #f8f8f8
     --bs-table-striped-bg: var(--color-Orange);
     --bs-table-accent-bg: var(--color-white);
 }
+
+.btnSignup {
+    background: none;
+    background-color: greenyellow;
+    height: 25px;
+    width: 25px;
+    border: 1px solid black;
+}
+
+/* Keep Background of i same as .btnSingup voor 'correct' btn looks */
+i {
+    background-color: greenyellow;
+}
