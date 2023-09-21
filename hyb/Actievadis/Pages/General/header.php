@@ -14,7 +14,7 @@ include ('../../Database/userFunctions.php');
             </div>
             <nav class="Navheader">
                 <ul class="MenuHeader">
-                    <li class="headerli"><a href="#" class="headerA">Home</a></li>
+                    <li class="headerli"><a href="../General/index.php" class="headerA">Home</a></li>
 
                     <?php
                 if (isset($_COOKIE['CurrUser'])) {
@@ -41,10 +41,10 @@ include ('../../Database/userFunctions.php');
                         if (isset($_COOKIE['CurrUser'])) {
                         ?> 
                         <li class="headerli"><a href="#" class="headerA">profile</a></li>
-                        <li class="headerli"><?php 
+                        <li class="headerli"><b><?php 
                             $user = new user(getUserById($_COOKIE['CurrUser']));
                             echo $user->getUsername();
-                        ?></li>
+                        ?></b></li>
                         <?php
                         }
                         ?>

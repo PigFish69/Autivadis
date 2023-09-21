@@ -37,4 +37,13 @@ function getAllActivitiesAsClass()
     }
     return $activityArr;
 }
+
+function getActivitiesByID($id)
+{
+    $activitie = db_getData("SELECT * FROM activity WHERE id = '$id'");
+    if ($activitie->num_rows > 0){
+        return $activitie;
+    }
+    return "No activitie found!";
+}
 ?>
