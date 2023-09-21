@@ -17,6 +17,20 @@ function getAllActivities()
     return db_getData("SELECT * FROM activity");
 }
 
+function getActivityById($activityId)
+{
+    $query = "SELECT *
+    FROM activity
+    WHERE id = '$activityId'";
+    $activity = db_getData($query);
+    
+    if ($activity->num_rows > 0) {
+        return $activity;
+    } else {
+        return "No activity found";
+    }
+}
+
 function getAllActivitiesAsClass() 
 {
     //should give back an array with all activities as classes
@@ -31,6 +45,7 @@ function getAllActivitiesAsClass()
             $activity['food'],
             $activity['price'],
             $activity['description'],
+            $activity['image'],
             $activity['startTime'],
             $activity['endTime']);
         array_push($activityArr, $addActivity);
@@ -38,12 +53,38 @@ function getAllActivitiesAsClass()
     return $activityArr;
 }
 
-function getActivitiesByID($id)
+function addNewActivity($name, $location, $food, $price, $description, $image, $startTime, $endTime) 
 {
-    $activitie = db_getData("SELECT * FROM activity WHERE id = '$id'");
-    if ($activitie->num_rows > 0){
-        return $activitie;
+    $mysqli = db_connect();
+    $query = $mysqli->prepare("INSERT INTO `activity` (`name`, `location`, `food`, `price`, `description`, `image`, `startTime`, `endTime`) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $query->bind_param("ssidssss", $nameQ, $locationQ, $foodQ, $priceQ, $descriptionQ, $imageQ, $startTimeQ, $endTimeQ);
+    $nameQ = $name;
+    $locationQ = $location;
+    $foodQ = $food;
+    $priceQ = $price;
+    $descriptionQ = $description;
+    $imageQ = $image;
+    $startTimeQ = $startTime;
+    $endTimeQ = $endTime;
+
+    $query->execute();
+    $mysqli->close();
+}
+
+function deleteActivityById($id)
+{
+    $query = "DELETE FROM `activity` WHERE `activity`.`Id` = " . $id;
+    
+    $activity = new activity(getActivityById($id));
+    
+    if (file_exists("../../Images/".$activity->getImage()))
+    {
+        if (db_doQuery($query))
+        {
+            unlink("../../Images/".$activity->getImage());
+        }
+        
     }
-    return "No activitie found!";
 }
 ?>
