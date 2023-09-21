@@ -16,4 +16,10 @@ function insertUser($username, $password){
     return $result;
 }
 
+function getUserById($id)
+{
+    $result = db_getData("SELECT * FROM user WHERE id = '$id'");
+    return $result;
+}
+
 ?>
