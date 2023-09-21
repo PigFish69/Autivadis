@@ -57,7 +57,7 @@ body {
     align-items: center;
     margin-left: -40px;
     width: auto;
-    height: 170px;
+    height: 250px;
     padding: 20px;
     background-color: white;
     border-radius: 0 40px 0 40px;
@@ -72,23 +72,17 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin-top: 20px;
     margin-bottom: 10px;
-    width: 50px;
+    width: 70px;
     height: 25px;
     background-color: white;
     border-radius: 5px;
     border: 2px solid #0f132f;
+    text-align: center;
 }
 
 .btn:hover
 {
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    width: 50px;
-    height: 25px;
     background-color: #0f132f;
-    border-radius: 5px;
-    border: 2px solid #0f132f;
     color: white;
     cursor: pointer;
 }
