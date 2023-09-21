@@ -8,6 +8,7 @@ $newDate = date('Y-m-d' ,strtotime('+1 month'));
 
 $activities = getActivitysBetweenTime($currentDate, $newDate);
 
+
 ?>
 <html>
     <head>
