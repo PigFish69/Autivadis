@@ -8,9 +8,9 @@
             <div class="Info">
                 <ul class="Menu">
                     <li>© Actievadis 2023 </li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Inloggen</a></li>
-                    <li><a href="#">Registreren</a></li>
+                    <li><a href="../General/index.php">Home</a></li>
+                    <li>|</li>
+                    <li>Alle rechten voorbehouden</li>
                 </ul>
             <div>
         </div>
