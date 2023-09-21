@@ -3,7 +3,7 @@ require_once "../General/header.php";
 require_once "../../Database/activityFunctions.php";
 
 if (isset($_GET['id'])) {
-    $activity = new activity(getActivitiesByID($_GET['id']));
+    $activity = new activity(getActivityById($_GET['id']));
 
 }
 ?>
