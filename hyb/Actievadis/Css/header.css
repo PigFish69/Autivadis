@@ -13,6 +13,7 @@ body {
 {
     padding: 20px;   
     display: flex;
+    background-color: white;
 }
 
 .Title
@@ -20,7 +21,7 @@ body {
     width: 30%;
 }
 
-.Navbar
+.Navheader
 {
     width: 70%;
     display: flex;
@@ -33,7 +34,7 @@ body {
     display: flex;
 }
 
-.MenuHeader a
+.headerA
 {
     display: flex;
     margin-right: 50px;
@@ -44,9 +45,10 @@ body {
     border: 1px white;
 }
 
-.MenuHeader a:hover
+.headerA:hover
 {
     color: #f5af00;
+    text-decoration: none;
 }
 
 .MenuHeader a:active
