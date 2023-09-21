@@ -25,6 +25,7 @@ if(isset($_POST['submit']))
 <head>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  -->
     <link rel="stylesheet" href="../../Css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Open+Sans:wght@500;600;800&family=Rubik:wght@500&display=swap" rel="stylesheet">
     
 
 </head>
@@ -35,8 +36,6 @@ if(isset($_POST['submit']))
             <h1 class="text h1">Login</h1>
             <p class="text omschrijving">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quaerat ratione molestias iure suscipit, ullam magnam eveniet provident praesentium voluptatibus iusto illo optio enim? Blanditiis dicta vitae, provident excepturi, quae optio aliquid, aspernatur nostrum aliquam officia recusandae. Repudiandae, nesciunt rerum explicabo odit soluta laudantium sint ipsa iusto assumenda eum consectetur!</p>
         </div> 
-        <!-- <div class="yellowbackground">
-        </div>  -->
         <div class="login"> 
 
             <!-- <?php 
@@ -48,13 +47,13 @@ if(isset($_POST['submit']))
             <form action="" method="post">
                 <div class="form-group">
                     <!-- <label>Username</label> -->
-                    <h3>Username</h3>
-                    <input type="text" name="username" class="form-control" value="">
+                    <h3>Gebruikersnaam</h3>
+                    <input type="text" name="username" class="form-control" value="" required>
                 </div>    
                 <div class="form-group">
                     <!-- <label>Password</label> -->
-                    <h3>Password</h3>
-                    <input type="password" name="password" class="form-control">
+                    <h3 class="titleh3">Wachtwoord</h3>
+                    <input type="password" name="password" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn" value="Login" name="submit">
