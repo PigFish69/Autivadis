@@ -15,19 +15,41 @@ include ('../../Database/userFunctions.php');
             <nav class="Navheader">
                 <ul class="MenuHeader">
                     <li class="headerli"><a href="#" class="headerA">Home</a></li>
-                    <li class="headerli"><a href="#" class="headerA">Inloggen</a></li>
-                    <li class="headerli"><a href="#" class="headerA">Registreren</a></li>
 
                     <?php
                 if (isset($_COOKIE['CurrUser'])) {
                     $user = new user(getUserById($_COOKIE['CurrUser']));
 
                     if ($user->getAdmin()) { ?>
-                        <li><a href="../Admin/admin.php">Beheer</a></li>
+                        <li class="headerli"><a href="../Admin/admin.php" class="headerA">Beheer</a></li>
                 <?php
                     }
                 }
                 ?>
+                        <li class="headerli">
+                        <?php
+                        if (isset($_COOKIE['CurrUser'])) {
+                        ?> 
+                            <a href="../Account/logout.php" class="headerA"><span class="ingelogd">Uitloggen</span>
+                        </a>
+                        <?php
+                        } else { ?>
+                            <li class="headerli"><a href="../Account/login.php" class="headerA">Inloggen</a></li>
+                        <?php } ?>
+                        </li>
+                        <?php
+                        if (isset($_COOKIE['CurrUser'])) {
+                        ?> 
+                        <li class="headerli"><a href="#" class="headerA">profile</a></li>
+                        <li class="headerli"><?php 
+                            $user = new user(getUserById($_COOKIE['CurrUser']));
+                            echo $user->getUsername();
+                        ?></li>
+                        <?php
+                        }
+                        ?>
+
+                </li>
                 </ul>
             </nav>
         </div>
