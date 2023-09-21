@@ -14,9 +14,8 @@ if(isset($_POST['submit']))
         echo "Er is wat fout gegaan, we hebben geen gebruiker gevonden!";
     }else
     {
-        // header('location: gebruikerspage.php');
         setcookie("CurrUser", (new user($user))->getId(), time() + 3600, "/", "");
-        print_r($_COOKIE['CurrUser']);
+        header('location: ../General/index.php');
     }
 }
 ?>
