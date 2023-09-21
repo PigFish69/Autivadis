@@ -2,6 +2,14 @@
     //include header & shite
     require_once "../General/header.php";
     require_once "../../Database/activityFunctions.php";
+
+    if (isset($_GET['id']) && isset($_GET['type']))
+    {
+        if ($_GET['type'] == 'activity')
+        {
+            deleteActivityById($_GET['id']);
+        }
+    }
 ?>
 <link rel="stylesheet" href="../../Css/admin.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
@@ -27,16 +35,18 @@
                 <tr>
                     <td><?php echo $activity['name']?></td>
                     <td><?php echo $activity['location']?></td>
-                    <td><?php echo $activity['food']?></td>
+                    <td><?php echo boolToYesNo($activity['food'])?></td>
                     <td><?php echo "€" . number_format((float)$activity['price'], 2, '.', '')?></td>
                     <td><?php echo $activity['startTime']?></td>
                     <td>
-                        <button class="btnMoreInfo" title="Meer info"><i class="bi bi-three-dots"></i></button>
+                        <button class="functionBtn btnMoreInfo" title="Meer info" id="<?php echo $activity['id'] ?>"><i class="bi bi-three-dots"></i></button>
+                        <button class="functionBtn btnDelete" title="Meer info" id="<?php echo $activity['id'] ?>"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <?php }?>
             </tbody>
         </table>
+        <button class="btnAddActivity" id="btnAddActivity">Toevoegen</button>
     </div>
 </body>
 <script src="../../Js/jquery.js"></script>
@@ -57,6 +67,15 @@
                 {"data": "functions"}
             ]
         });
+
+        //activity
+        $('#btnAddActivity').on('click', function() {
+            window.location.href = `addActivity.php`;
+        })
+        $('#activityTable tbody').on('click', '.btnDelete', function() {
+            var id = $(this).attr('id');
+            window.location.href = `admin.php?id=${id}&type=activity`;
+        })
     })
 </script>
 <?php 
