@@ -13,6 +13,7 @@ body {
 {
     padding: 20px;   
     display: flex;
+    background-color: white;
 }
 
 .Title
@@ -20,7 +21,7 @@ body {
     width: 30%;
 }
 
-.Navbar
+.Navheader
 {
     width: 70%;
     display: flex;
@@ -28,12 +29,12 @@ body {
     justify-content: end;
 }
 
-.Menu
+.MenuHeader
 {
     display: flex;
 }
 
-.Menu a
+.headerA
 {
     display: flex;
     margin-right: 50px;
@@ -44,18 +45,19 @@ body {
     border: 1px white;
 }
 
-.Menu a:hover
+.headerA:hover
 {
     color: #f5af00;
+    text-decoration: none;
 }
 
-.Menu a:active
+.MenuHeader a:active
 {
     border-bottom: 2px #f5af00 dashed;
     color: black;
 }
 
-li {
+.headerli {
     list-style: none;
 }
 

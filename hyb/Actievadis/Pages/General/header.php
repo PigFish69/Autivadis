@@ -1,4 +1,5 @@
 <?php
+include ('../../Database/userFunctions.php');
 include "../../Class/HandyFunctions.php";
 ?>
 <htlm>
@@ -11,11 +12,44 @@ include "../../Class/HandyFunctions.php";
             <div class="Title">
                 <img src="../../Images/ImgLogo.png" width="200px">
             </div>
-            <nav class="Navbar">
-                <ul class="Menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Inloggen</a></li>
-                    <li><a href="#">Registreren</a></li>
+            <nav class="Navheader">
+                <ul class="MenuHeader">
+                    <li class="headerli"><a href="#" class="headerA">Home</a></li>
+
+                    <?php
+                if (isset($_COOKIE['CurrUser'])) {
+                    $user = new user(getUserById($_COOKIE['CurrUser']));
+
+                    if ($user->getAdmin()) { ?>
+                        <li class="headerli"><a href="../Admin/admin.php" class="headerA">Beheer</a></li>
+                <?php
+                    }
+                }
+                ?>
+                        <li class="headerli">
+                        <?php
+                        if (isset($_COOKIE['CurrUser'])) {
+                        ?> 
+                            <a href="../Account/logout.php" class="headerA"><span class="ingelogd">Uitloggen</span>
+                        </a>
+                        <?php
+                        } else { ?>
+                            <li class="headerli"><a href="../Account/login.php" class="headerA">Inloggen</a></li>
+                        <?php } ?>
+                        </li>
+                        <?php
+                        if (isset($_COOKIE['CurrUser'])) {
+                        ?> 
+                        <li class="headerli"><a href="#" class="headerA">profile</a></li>
+                        <li class="headerli"><?php 
+                            $user = new user(getUserById($_COOKIE['CurrUser']));
+                            echo $user->getUsername();
+                        ?></li>
+                        <?php
+                        }
+                        ?>
+
+                </li>
                 </ul>
             </nav>
         </div>
