@@ -37,14 +37,15 @@ include "../../Class/HandyFunctions.php";
                             <li class="headerli"><a href="../Account/login.php" class="headerA">Inloggen</a></li>
                         <?php } ?>
                         </li>
+
                         <?php
                         if (isset($_COOKIE['CurrUser'])) {
                         ?> 
-                        <li class="headerli"><a href="#" class="headerA">profile</a></li>
-                        <li class="headerli"><b><?php 
+                        <li class="headerli"><a href="../Activities/Overview.php" class="headerA">Activiteiten</a></li>
+                        <li class="headerli"><a href="#" class="headerA"><?php 
                             $user = new user(getUserById($_COOKIE['CurrUser']));
                             echo $user->getUsername();
-                        ?></b></li>
+                        ?></a></li>
                         <?php
                         }
                         ?>
