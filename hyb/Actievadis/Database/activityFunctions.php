@@ -33,12 +33,12 @@ function getActivityById($activityId)
 
 function getAllActivitiesAsClass() 
 {
-    //should give back an array with all activities as classes
-    $activitiesSql = db_getData("SELECT * FROM activity");
+    //should give back an array with all activities as classes  edit: doesn't work
+    $activitiesSql = getAllActivities();
     $activityArr = [];
     while ($activity = $activitiesSql->fetch_assoc()) {
-        $addActivity = new activity();
-        $addActivity = $addActivity->setActivity(
+        $emtyActivity = new activity();
+        $addActivity = $emtyActivity->setActivity(
             $activity['id'], 
             $activity['name'],
             $activity['location'],
