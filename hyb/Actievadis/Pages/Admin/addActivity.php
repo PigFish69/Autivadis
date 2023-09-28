@@ -22,9 +22,6 @@ if (isset($_POST['btnSubmit']))
     }
     if ($uploadOk == 1) {
         if (move_uploaded_file($_FILES["imgActivity"]["tmp_name"], $target_file)) {
-            // echo "Het bestand ". htmlspecialchars( basename( $_FILES["imgActivity"]["name"])). " is geüpload";
-            // addNewBike($_POST['txtName'], $_POST['txtSize'], $_POST['txtBrand'], $_POST['txtDescription'], $imgName, $_POST['txtPrice']);
-
             addNewActivity($_POST["txtName"], $_POST["txtLocation"], $_POST["chbFood"], 
             $_POST["txtPrice"], $_POST["txtDescription"], $imgName, $_POST["txtStartTime"], $_POST["txtEndTime"]);
             
