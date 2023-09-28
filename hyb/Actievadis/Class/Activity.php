@@ -6,6 +6,7 @@ class activity {
     private $food;
     private $price;
     private $description;
+    private $image;
     private $startTime;
     private $endTime;
 
@@ -21,8 +22,9 @@ class activity {
                 $this->food = $activityArr[3];
                 $this->price = $activityArr[4];
                 $this->description = $activityArr[5];
-                $this->startTime = $activityArr[6];
-                $this->endTime = $activityArr[7];
+                $this->image = $activityArr[6];
+                $this->startTime = $activityArr[7];
+                $this->endTime = $activityArr[8];
             } else {
                 return $this;
             }
@@ -33,7 +35,7 @@ class activity {
         }
     }
 
-    function setActivity($id, $name, $location, $food, $price, $description, $startTime, $endTime) 
+    function setActivity($id, $name, $location, $food, $price, $description, $image, $startTime, $endTime) 
     {
         try {
             $this->id = $id;
@@ -42,6 +44,7 @@ class activity {
             $this->food = $food;
             $this->price = $price;
             $this->description = $description;
+            $this->image = $image;
             $this->startTime = $startTime;
             $this->endTime = $endTime;
         } catch (\Throwable $th) {
@@ -99,6 +102,14 @@ class activity {
     }
 
     /**
+     * Get the value of image
+     */ 
+    public function getImage()
+    {
+        return $this->image;
+    }
+    
+    /**
      * Get the value of startTime
      */ 
     public function getStartTime()
@@ -112,6 +123,12 @@ class activity {
     public function getEndTime()
     {
         return $this->endTime;
+    }
+
+    public function getDate()
+    {
+
+        return date("d-m-Y H:i", strtotime($this->startTime)) . " tot " . date("d-m-Y H:i", strtotime($this->endTime)) ;
     }
 }
 ?>

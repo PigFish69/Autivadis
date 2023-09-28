@@ -1,7 +1,7 @@
 <?php
 include ('../../Database/userFunctions.php');
+include "../../Class/HandyFunctions.php";
 ?>
-
 <htlm>
     <link rel="stylesheet" href="../Css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Open+Sans:wght@600&family=Rubik:wght@500&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@ include ('../../Database/userFunctions.php');
             </div>
             <nav class="Navheader">
                 <ul class="MenuHeader">
-                    <li class="headerli"><a href="#" class="headerA">Home</a></li>
+                    <li class="headerli"><a href="../General/index.php" class="headerA">Home</a></li>
 
                     <?php
                 if (isset($_COOKIE['CurrUser'])) {
@@ -37,14 +37,15 @@ include ('../../Database/userFunctions.php');
                             <li class="headerli"><a href="../Account/login.php" class="headerA">Inloggen</a></li>
                         <?php } ?>
                         </li>
+
                         <?php
                         if (isset($_COOKIE['CurrUser'])) {
                         ?> 
-                        <li class="headerli"><a href="#" class="headerA">profile</a></li>
-                        <li class="headerli"><?php 
+                        <li class="headerli"><a href="../Activities/overview.php" class="headerA">Activiteiten</a></li>
+                        <li class="headerli"><a href="#" class="headerA"><?php 
                             $user = new user(getUserById($_COOKIE['CurrUser']));
                             echo $user->getUsername();
-                        ?></li>
+                        ?></a></li>
                         <?php
                         }
                         ?>

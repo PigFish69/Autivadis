@@ -1,29 +1,49 @@
 <?php
 require_once "../General/header.php";
+require_once "../../Database/activityFunctions.php";
+
+if (isset($_GET['id'])) {
+    $activity = new activity(getActivityById($_GET['id']));
+    if (isset($_POST['register'])) {
+        registerForActivity($_GET['id'], $_COOKIE['CurrUser']);
+    }
+    }
 ?>
 
 <html>
+<head>
 <link rel="stylesheet" href="../../Css/detail.css">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Open+Sans:wght@500;600;800&family=Rubik:wght@500&display=swap" rel="stylesheet">
-
+</head>
 <body>
     <div class="container">
         <div class="infoCard">
             <p class="text p">Wat gaan we precies doen</p>
-            <h1 class="text h1">Activiteit</h1>
-            <p class="text omschrijving">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quaerat ratione molestias iure suscipit, ullam magnam eveniet provident praesentium voluptatibus iusto illo optio enim? Blanditiis dicta vitae, provident excepturi, quae optio aliquid, aspernatur nostrum aliquam officia recusandae. Repudiandae, nesciunt rerum explicabo odit soluta laudantium sint ipsa iusto assumenda eum consectetur!</p>
-            <h1 class="text inschrijven">inschrijven?</h1>
+            <h1 class="text h1"><?php echo $activity->getName(); ?></h1>
+            <p class="text omschrijving"><?php echo $activity->getDescription(); ?></p>
+            <form method="post" action="">
+                <button type="submit" name="register" class="btn">Inschrijven?</button>
+            </form>    
         </div> 
         <div class="menuCard">
             <menu class="menuDetail">
-                <h2 class="h2">Detials</h2>
-                <li class="detailli location">locatie</li>
-                <li class="detailli date">datum - begintijd / eindtijd</li>
-                <li class="detailli price">€kosten</li>
-                <li class="detailli food">Eten (niet) inbegrepen</li>
+                <h2 class="h2">Details</h2>
+                <li class="detailli location"><?php echo $activity->getLocation(); ?></li>
+                <li class="detailli date"><?php echo $activity->getDate(); ?></li>
+                <li class="detailli price">€<?php echo $activity->getPrice(); ?></li>
+                <li class="detailli food"><?php 
+                if($activity->getFood() == 0)
+                { 
+                    echo "Nee";
+                }
+                else{
+                    echo "Ja";
+                }
+                ?></li>
             </menu>
         </div>  
     </div>
 </body>
+
 </html>
 

@@ -29,3 +29,14 @@ function db_insertData($query){
     $mysqli->close();
     return $result;
 }
+
+function db_doQuery($query)
+{
+    $mysqli= db_connect();
+    if ($mysqli->query($query) === true) {
+        return true;
+    }
+    $mysqli->close();
+    return false;
+}
+?>
