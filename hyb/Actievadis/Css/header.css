@@ -51,12 +51,6 @@ body {
     text-decoration: none;
 }
 
-.MenuHeader a:active
-{
-    border-bottom: 2px #f5af00 dashed;
-    color: black;
-}
-
 .headerli {
     list-style: none;
 }
