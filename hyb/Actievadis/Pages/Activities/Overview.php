@@ -82,12 +82,12 @@ function registerForActivity($userId, $activityId)
         $('#allActivities tbody').on('click', '.btnSignup', function() {
             var id = $(this).attr('id');
             // activity ID is still hard code for testing purposes 
-            window.location.href = `Overview.php?id=${id}&userId=2`;
+            window.location.href = `overview.php?id=${id}&userId=2`;
         })
 
         $('.activityCards').on('click', '.card', function() {
             var id = $(this).attr('id');
-            window.location.href = `Detail.php?id=${id}`
+            window.location.href = `detail.php?id=${id}`
         })
     })
 </script>
