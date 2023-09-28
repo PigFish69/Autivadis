@@ -28,13 +28,13 @@ if (isset($_GET['id'])) {
             <p class="text omschrijving"><?php echo $activity->getDescription(); ?></p>
             <form method="post" action="">
                 <?php 
-                    if(!alreadySighUp($_GET['id'], $_COOKIE['CurrUser']))
+                    if(!alreadySignUp($_GET['id'], $_COOKIE['CurrUser']))
                     {
                 ?>
                 <button type="submit" name="register" class="btn">Inschrijven?</button>
                 <?php
                     }
-                    if(alreadySighUp($_GET['id'], $_COOKIE['CurrUser']))
+                    if(alreadySignUp($_GET['id'], $_COOKIE['CurrUser']))
                     {
                 ?>
                 <button type="submit" name="signOut" class="btn">Uitschrijven?</button>
