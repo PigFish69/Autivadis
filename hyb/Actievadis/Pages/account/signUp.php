@@ -6,28 +6,19 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    insertUser($username, $password);
-
-    echo "Registeren is gelukt! Je kan na inloggen";
-
+    $insertedId = insertUser($username, $password);
+    if ($insertedId > 0) {
+        setcookie("CurrUser", $insertedId, time() + 3600, "/", "");
+        header('location: ../General/index.php');
+        exit();
+    }
 }
 ?>
 
 <html>
 <head>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  -->
     <link rel="stylesheet" href="../../Css/signup.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Open+Sans:wght@500;600;800&family=Rubik:wght@500&display=swap" rel="stylesheet">
-    <script src="../../Js/jquery.js"></script>
-    <script>
-    $(document).ready(function(){
-        $('#beheer').hide();
-
-        $('input[type="checkbox"]').click(function(){
-                $("#beheer").toggle(500);          
-        });
-    });
-</script>
 </head>
 <body>  
     <div class="container">

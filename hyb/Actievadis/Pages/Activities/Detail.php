@@ -4,7 +4,6 @@ require_once "../../Database/activityFunctions.php";
 
 if (isset($_GET['id'])) {
     $activity = new activity(getActivityById($_GET['id']));
-
 }
 ?>
 
@@ -26,16 +25,8 @@ if (isset($_GET['id'])) {
                 <h2 class="h2">Detials</h2>
                 <li class="detailli location"><?php echo $activity->getLocation(); ?></li>
                 <li class="detailli date"><?php echo $activity->getDate(); ?></li>
-                <li class="detailli price">€<?php echo $activity->getPrice(); ?></li>
-                <li class="detailli food"><?php 
-                if($activity->getFood() == 0)
-                {
-                    echo "Nee";
-                }
-                else{
-                    echo "Ja";
-                }
-                ?></li>
+                <li class="detailli price"><?php echo "€" . number_format((float)$activity->getPrice(), 2, '.', '')?></li>
+                <li class="detailli food"><?php echo boolToYesNo($activity->getFood());?></li>
             </menu>
         </div>  
     </div>

@@ -33,12 +33,12 @@ function getActivityById($activityId)
 
 function getAllActivitiesAsClass() 
 {
-    //should give back an array with all activities as classes
-    $activitiesSql = db_getData("SELECT * FROM activity");
+    //should give back an array with all activities as classes  edit: doesn't work
+    $activitiesSql = getAllActivities();
     $activityArr = [];
     while ($activity = $activitiesSql->fetch_assoc()) {
-        $addActivity = new activity();
-        $addActivity = $addActivity->setActivity(
+        $emtyActivity = new activity();
+        $addActivity = $emtyActivity->setActivity(
             $activity['id'], 
             $activity['name'],
             $activity['location'],
@@ -85,6 +85,21 @@ function deleteActivityById($id)
             unlink("../../Images/".$activity->getImage());
         }
         
+    }
+}
+
+function registerForActivity($userId, $activityId)
+{
+    $query = "SELECT * FROM signup WHERE activityId = $activityId && userId = $userId";
+    $data = db_getData($query);
+
+    // check if Users is already signed up for activity
+    if ($data->num_rows > 0) {
+        echo "Je Bent Al Ingeschreven";
+    } else {
+        $query = "INSERT INTO signup (id, activityId, userId) VALUES ('0', '$activityId', '$userId')";
+        db_insertData($query);
+        echo "Gelukt Gebruiker heeft zich aangemeld voor deze activiteit";
     }
 }
 ?>

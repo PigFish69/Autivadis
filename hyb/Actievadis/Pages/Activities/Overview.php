@@ -1,5 +1,5 @@
 <?php
-include "../../Database/databaseFunctions.php";
+include "../../Database/activityFunctions.php";
 include "../General/header.php";
 
 if (isset($_GET['id']) && isset($_GET['userId'])) {
@@ -8,23 +8,6 @@ if (isset($_GET['id']) && isset($_GET['userId'])) {
     $activityId = $_GET['id'];
 
     registerForActivity($userId, $activityId);
-}
-
-// This function is for testing needs to be moved to activitieFunctons when Working
-
-function registerForActivity($userId, $activityId)
-{
-    $query = "SELECT * FROM signup WHERE activityId = $activityId && userId = $userId";
-    $data = db_getData($query);
-
-    // check if Users is already signed up for activity
-    if ($data->num_rows > 0) {
-        echo "Je Bent Al Ingeschreven";
-    } else {
-        $query = "INSERT INTO signup (id, activityId, userId) VALUES ('0', '$activityId', '$userId')";
-        db_insertData($query);
-        echo "Gelukt Gebruiker heeft zich aangemeld voor deze activiteit";
-    }
 }
 ?>
 
@@ -39,11 +22,9 @@ function registerForActivity($userId, $activityId)
         <h1 class="bold">Activiteiten</h3>
             <div class="activityCards">
                 <?php
-                $activity = db_getData("SELECT * FROM `activity`");
-                while ($activityData = $activity->fetch_assoc()) {
+                $activities = getAllActivities();
+                while ($activityData = $activities->fetch_assoc()) {
                 ?>
-
-
                     <div class="card" id="<?php echo $activityData['id'] ?>">
                         <img src="https://maken.wikiwijs.nl/generated/s960x720_3eb68a0fc0f8354d440713a2ed902b657cac8ef2.jpg" />
                         <div class="cardText">
@@ -52,8 +33,6 @@ function registerForActivity($userId, $activityId)
                             <p>Kosten: <?php echo "€" . number_format((float)$activityData['price'], 2, '.', '') ?></p>
                         </div>
                     </div>
-
-
                 <?php
                 }
                 ?>
