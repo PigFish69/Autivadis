@@ -76,6 +76,10 @@
             var id = $(this).attr('id');
             window.location.href = `admin.php?id=${id}&type=activity`;
         })
+        $('#activityTable tbody').on('click', '.btnMoreInfo', function() {
+            var id = $(this).attr('id');
+            window.location.href = `adminActivityDetail.php?id=${id}`;
+        })
     })
 </script>
 <?php 

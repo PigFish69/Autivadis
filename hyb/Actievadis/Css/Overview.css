@@ -10,8 +10,7 @@ Corvadis White #f8f8f8
     --color-Orange: #f5af00;
 }
 
-body
-{
+body {
     background-color: #f8f8f8;
 }
 
@@ -55,14 +54,14 @@ body
     margin: 5%;
     width: 20%;
     height: 350px;
-    overflow: hidden; 
+    overflow: hidden;
     background-color: white;
 }
 
 .card img {
-    width: 100%;
-    width: 100%;
-    object-fit: contain;
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
     margin-bottom: 5%;
 
 }
@@ -75,8 +74,7 @@ body
 
 }
 
-.colorBackground
-{
+.colorBackground {
     background-color: #f5af00;
     width: 50%;
     height: 700px;
@@ -84,8 +82,7 @@ body
     display: flex;
 }
 
-.titleh1
-{
+.titleh1 {
     color: #0f132f;
     font-size: 50px;
     font-weight: 700;
@@ -93,21 +90,22 @@ body
     margin-top: 100px;
 }
 
-.rightSide
-{
+.rightSide {
     display: flex;
     width: 50%;
     justify-content: center;
     margin-top: 60px;
 }
 
-.rightTopText
-{
+.rightTopText {
     width: 60%;
     /* display: flex; */
 }
 
-.topContent
-{
+.topContent {
     display: flex;
+}
+
+.card:hover {
+    cursor: pointer;
 }
