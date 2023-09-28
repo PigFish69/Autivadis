@@ -29,49 +29,52 @@ function registerForActivity($userId, $activityId)
 ?>
 
 <html>
-    <head>
-        <link rel="stylesheet" href="../../Css/Overview.css">
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Open+Sans:wght@500;600;800&family=Rubik:wght@500&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container">
-            <div class="topContent">
-                <div class="colorBackground">
-                    <h1 class="titleh1">Activiteiten</h1>
-                </div>
-                <div class="rightSide">
-                    <div class="rightTopText">
-                    <p>Bekijk alle activiteiten voor de komende tijd. Twijfel niet om vragen te stellen. Vergeet ook niet om je aan te melden bij een activiteit waar jij aan mee wilt doen.</p>
-                    </div>
-                </div>
+
+<head>
+    <link rel="stylesheet" href="../../Css/Overview.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Open+Sans:wght@500;600;800&family=Rubik:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="topContent">
+            <div class="colorBackground">
+                <h1 class="titleh1">Activiteiten</h1>
             </div>
-
-            <div class="containerCards">
-                <div class="activityCards">
-                    <?php
-                    $activity = db_getData("SELECT * FROM `activity`");
-                    while ($activityData = $activity->fetch_assoc()) {
-                    ?>
-
-
-                        <div class="card" id="<?php echo $activityData['id'] ?>">
-                            <img src="https://maken.wikiwijs.nl/generated/s960x720_3eb68a0fc0f8354d440713a2ed902b657cac8ef2.jpg" />
-                            <div class="cardText">
-                                <h2><?php echo $activityData['name'] ?></h2>
-                                <p>Begin tijd: <?php echo $activityData['startTime'] ?></p>
-                                <p>Kosten: <?php echo "€" . number_format((float)$activityData['price'], 2, '.', '') ?></p>
-                            </div>
-                        </div>
-
-
-                    <?php
-                    }
-                    ?>
+            <div class="rightSide">
+                <div class="rightTopText">
+                    <p>Bekijk alle activiteiten voor de komende tijd. Twijfel niet om vragen te stellen. Vergeet ook niet om je aan te melden bij een activiteit waar jij aan mee wilt doen.</p>
                 </div>
             </div>
         </div>
-    </body>
-    <?php include "../General/footer.php" ?> 
+
+        <div class="containerCards">
+            <div class="activityCards">
+                <?php
+                $activity = db_getData("SELECT * FROM `activity`");
+                while ($activityData = $activity->fetch_assoc()) {
+                ?>
+
+
+                    <div class="card" id="<?php echo $activityData['id'] ?>">
+                        <img src="../../Images/<?php echo $activityData['image'] ?>" />
+                        <div class="cardText">
+                            <h2><?php echo $activityData['name'] ?></h2>
+                            <p>Begin tijd: <?php echo $activityData['startTime'] ?></p>
+                            <p>Kosten: <?php echo "€" . number_format((float)$activityData['price'], 2, '.', '') ?></p>
+                        </div>
+                    </div>
+
+
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</body>
+<?php include "../General/footer.php" ?>
+
 </html>
 <script src="../../Js/jquery.js"></script>
 <script>
@@ -80,6 +83,11 @@ function registerForActivity($userId, $activityId)
             var id = $(this).attr('id');
             // activity ID is still hard code for testing purposes 
             window.location.href = `Overview.php?id=${id}&userId=2`;
+        })
+
+        $('.activityCards').on('click', '.card', function() {
+            var id = $(this).attr('id');
+            window.location.href = `Detail.php?id=${id}`
         })
     })
 </script>
