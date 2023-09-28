@@ -29,87 +29,49 @@ function registerForActivity($userId, $activityId)
 ?>
 
 <html>
-<link rel="stylesheet" href="../../Css/Overview.css">
-
-
-
-<body>
-
-    <div class="containerCards">
-        <h1 class="bold">Activiteiten</h3>
-            <div class="activityCards">
-                <?php
-                $activity = db_getData("SELECT * FROM `activity`");
-                while ($activityData = $activity->fetch_assoc()) {
-                ?>
-
-
-                    <div class="card" id="<?php echo $activityData['id'] ?>">
-                        <img src="https://maken.wikiwijs.nl/generated/s960x720_3eb68a0fc0f8354d440713a2ed902b657cac8ef2.jpg" />
-                        <div class="cardText">
-                            <h3><?php echo $activityData['name'] ?></h3>
-                            <p>Begin tijd: <?php echo $activityData['startTime'] ?></p>
-                            <p>Kosten: <?php echo "€" . number_format((float)$activityData['price'], 2, '.', '') ?></p>
-                        </div>
+    <head>
+        <link rel="stylesheet" href="../../Css/Overview.css">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Open+Sans:wght@500;600;800&family=Rubik:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="topContent">
+                <div class="colorBackground">
+                    <h1 class="titleh1">Activiteiten</h1>
+                </div>
+                <div class="rightSide">
+                    <div class="rightTopText">
+                    <p>Bekijk alle activiteiten voor de komende tijd. Twijfel niet om vragen te stellen. Vergeet ook niet om je aan te melden bij een activiteit waar jij aan mee wilt doen.</p>
                     </div>
-
-
-                <?php
-                }
-                ?>
+                </div>
             </div>
 
-            <!-- ------TABLE HAS BEEN REJECTED ^Going to be cards^ -->
-            <!--<table id="allActivities" class="table table-striped tableActivities">
-            <thead>
-                <tr>
-                    <th>Naam Activiteit</th>
-                    <th>Locatie</th>
-                    <th>Eten Inbegrepen</th>
-                    <th>Maximaal Aantal Deelnemers</th> Should
-                    <th>Minimaal Aantal Deelnemers</th> Should
-                    <th>Kosten</th>
-                    <th>Benodigheden</th> Could
-                    <th>Omschrijving</th>
-                    <th>Begin Tijd</th>
-                    <th>Eind Tijd</th>
-                    <th>Afbeelding</th> Should
-                </tr>
-            </thead>
+            <div class="containerCards">
+                <div class="activityCards">
+                    <?php
+                    $activity = db_getData("SELECT * FROM `activity`");
+                    while ($activityData = $activity->fetch_assoc()) {
+                    ?>
 
-            Get Activity data from Database and fill tables
-            Add Button for Sign up / Possibly remove activitie once Signed up for
 
-            <tbody>
-                Sample Data
-                <?php
-                $users = db_getData("SELECT * FROM `activity`");
-                while ($userData = $users->fetch_assoc()) { ?>
-                    <tr>
-                        <td><?php echo $userData['name'] ?></td>
-                        <td><?php echo $userData['location'] ?></td>
-                        <td><?php echo $userData['food'] ?></td>
-                        <td><?php echo $userData['price'] ?></td>
-                        <td><?php echo $userData['description'] ?></td>
-                        <td><?php echo $userData['startTime'] ?></td>
-                        <td><?php echo $userData['endTime'] ?></td>
-                        <td>
-                            <button class="btnSignup" id="<?php echo $userData['id'] ?>"><i class="bi bi-envelope-plus"></i></button>
-                        </td>
+                        <div class="card" id="<?php echo $activityData['id'] ?>">
+                            <img src="https://maken.wikiwijs.nl/generated/s960x720_3eb68a0fc0f8354d440713a2ed902b657cac8ef2.jpg" />
+                            <div class="cardText">
+                                <h2><?php echo $activityData['name'] ?></h2>
+                                <p>Begin tijd: <?php echo $activityData['startTime'] ?></p>
+                                <p>Kosten: <?php echo "€" . number_format((float)$activityData['price'], 2, '.', '') ?></p>
+                            </div>
+                        </div>
 
-                    </tr>
-                <?php
-                }
-                ?>
-            </tbody> -->
-    </div>
 
-</body>
-<!-- <?php include "../General/footer.php" ?> -->
-
-<!-- Show all Activities. Which you signed up for -->
-<!-- Button for Sign out from activitie -->
-
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </body>
+    <?php include "../General/footer.php" ?> 
 </html>
 <script src="../../Js/jquery.js"></script>
 <script>
