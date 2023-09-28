@@ -10,26 +10,29 @@ Corvadis White #f8f8f8
     --color-Orange: #f5af00;
 }
 
+body {
+    background-color: #f8f8f8;
+}
+
 * {
     margin: 0;
     padding: 0;
-    background-color: var(--color-white);
-
 }
 
 .containerCards h1 {
     margin-top: 20px;
     text-align: center;
     width: 100%;
-
+    margin-bottom: 10px;
 }
 
-.card h3 {
+.card h2 {
     text-align: center;
 }
 
 .card p {
     text-align: center;
+    color: rgb(75, 75, 75);
 }
 
 .containerCards {
@@ -43,26 +46,22 @@ Corvadis White #f8f8f8
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    width: 80%;
+    width: 100%;
+    margin-top: -600px;
 }
 
 .card {
     margin: 5%;
     width: 20%;
-    height: 300px;
-    /* overflow: hidden; */
-    border-width: 3px;
-    border-style: solid;
-    border-image:
-        linear-gradient(to bottom,
-            var(--color-Orange),
-            var(--color-Blue)) 30;
+    height: 350px;
+    overflow: hidden;
+    background-color: white;
 }
 
 .card img {
-    width: 100%;
-    width: 100%;
-    object-fit: contain;
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
     margin-bottom: 5%;
 
 }
@@ -73,4 +72,40 @@ Corvadis White #f8f8f8
     display: block;
     align-content: center;
 
+}
+
+.colorBackground {
+    background-color: #f5af00;
+    width: 50%;
+    height: 700px;
+    border-radius: 0 40px 0 0;
+    display: flex;
+}
+
+.titleh1 {
+    color: #0f132f;
+    font-size: 50px;
+    font-weight: 700;
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+.rightSide {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.rightTopText {
+    width: 60%;
+    /* display: flex; */
+}
+
+.topContent {
+    display: flex;
+}
+
+.card:hover {
+    cursor: pointer;
 }

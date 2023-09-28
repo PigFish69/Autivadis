@@ -1,10 +1,18 @@
 <?php
 require_once "../General/header.php";
 require_once "../../Database/activityFunctions.php";
+require_once "../../Database/signUpFunctions.php";
 
 if (isset($_GET['id'])) {
     $activity = new activity(getActivityById($_GET['id']));
-}
+
+    if (isset($_POST['register'])) {
+        registerForActivity($_GET['id'], $_COOKIE['CurrUser']);
+    }
+    if (isset($_POST['signOut'])) {
+        signOutForActivity($_GET['id'], $_COOKIE['CurrUser']);
+    }
+    
 ?>
 
 <html>
@@ -18,11 +26,27 @@ if (isset($_GET['id'])) {
             <p class="text p">Wat gaan we precies doen</p>
             <h1 class="text h1"><?php echo $activity->getName(); ?></h1>
             <p class="text omschrijving"><?php echo $activity->getDescription(); ?></p>
-            <h1 class="text inschrijven">inschrijven?</h1>
+            <form method="post" action="">
+                <?php 
+                    if(!alreadySignUp($_GET['id'], $_COOKIE['CurrUser']))
+                    {
+                ?>
+                <button type="submit" name="register" class="btn">Inschrijven?</button>
+                <?php
+                    }
+                    if(alreadySignUp($_GET['id'], $_COOKIE['CurrUser']))
+                    {
+                ?>
+                <button type="submit" name="signOut" class="btn">Uitschrijven?</button>
+                <?php
+                    }
+                }
+                ?>
+            </form>    
         </div> 
         <div class="menuCard">
             <menu class="menuDetail">
-                <h2 class="h2">Detials</h2>
+                <h2 class="h2">Details</h2>
                 <li class="detailli location"><?php echo $activity->getLocation(); ?></li>
                 <li class="detailli date"><?php echo $activity->getDate(); ?></li>
                 <li class="detailli price"><?php echo "€" . number_format((float)$activity->getPrice(), 2, '.', '')?></li>
