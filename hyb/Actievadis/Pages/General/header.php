@@ -41,7 +41,7 @@ include "../../Class/HandyFunctions.php";
                         <?php
                         if (isset($_COOKIE['CurrUser'])) {
                         ?> 
-                        <li class="headerli"><a href="../Activities/Overview.php" class="headerA">Activiteiten</a></li>
+                        <li class="headerli"><a href="../Activities/overview.php" class="headerA">Activiteiten</a></li>
                         <li class="headerli"><a href="#" class="headerA"><?php 
                             $user = new user(getUserById($_COOKIE['CurrUser']));
                             echo $user->getUsername();

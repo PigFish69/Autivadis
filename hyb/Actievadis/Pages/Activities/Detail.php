@@ -4,8 +4,10 @@ require_once "../../Database/activityFunctions.php";
 
 if (isset($_GET['id'])) {
     $activity = new activity(getActivityById($_GET['id']));
-
-}
+    if (isset($_POST['register'])) {
+        registerForActivity($_GET['id'], $_COOKIE['CurrUser']);
+    }
+    }
 ?>
 
 <html>
@@ -19,17 +21,19 @@ if (isset($_GET['id'])) {
             <p class="text p">Wat gaan we precies doen</p>
             <h1 class="text h1"><?php echo $activity->getName(); ?></h1>
             <p class="text omschrijving"><?php echo $activity->getDescription(); ?></p>
-            <h1 class="text inschrijven">inschrijven?</h1>
+            <form method="post" action="">
+                <button type="submit" name="register" class="btn">Inschrijven?</button>
+            </form>    
         </div> 
         <div class="menuCard">
             <menu class="menuDetail">
-                <h2 class="h2">Detials</h2>
+                <h2 class="h2">Details</h2>
                 <li class="detailli location"><?php echo $activity->getLocation(); ?></li>
                 <li class="detailli date"><?php echo $activity->getDate(); ?></li>
                 <li class="detailli price">€<?php echo $activity->getPrice(); ?></li>
                 <li class="detailli food"><?php 
                 if($activity->getFood() == 0)
-                {
+                { 
                     echo "Nee";
                 }
                 else{

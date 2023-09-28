@@ -87,4 +87,19 @@ function deleteActivityById($id)
         
     }
 }
+
+function registerForActivity($userId, $activityId)
+{
+    $query = "SELECT * FROM signup WHERE activityId = $activityId && userId = $userId";
+    $data = db_getData($query);
+
+    // check if Users is already signed up for activity
+    if ($data->num_rows > 0) {
+        echo "Je Bent Al Ingeschreven";
+    } else {
+        $query = "INSERT INTO signup (id, activityId, userId) VALUES ('0', '$activityId', '$userId')";
+        db_insertData($query);
+        echo "Gelukt Gebruiker heeft zich aangemeld voor deze activiteit";
+    }
+}
 ?>
