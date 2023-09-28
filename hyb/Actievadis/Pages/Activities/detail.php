@@ -7,10 +7,10 @@ if (isset($_GET['id'])) {
     $activity = new activity(getActivityById($_GET['id']));
 
     if (isset($_POST['register'])) {
-        registerForActivity($_GET['id'], $_COOKIE['CurrUser']);
+        registerForActivity($_COOKIE['CurrUser'], $_GET['id']);
     }
     if (isset($_POST['signOut'])) {
-        signOutForActivity($_GET['id'], $_COOKIE['CurrUser']);
+        signOutForActivity($_COOKIE['CurrUser'], $_GET['id']);
     }
     
 ?>
