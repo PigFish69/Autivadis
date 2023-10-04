@@ -11,4 +11,19 @@ function alreadySignUp($activityId, $userId)
     }
     return $inschrijven;
 }
+
+function getActivitiesForUser($userId)
+{
+
+    $query = "SELECT signup.activityId FROM signup WHERE userId = '$userId'";
+    $allActivities = db_getData($query);
+
+    if ($allActivities->num_rows > 0) {
+        return $allActivities;
+    } else {
+        return "No activity found";
+    }
+
+    
+}
 ?>

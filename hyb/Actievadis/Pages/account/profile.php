@@ -2,13 +2,10 @@
 require_once "../General/header.php";
 require_once "../../Class/HandyFunctions.php";
 
-
-if (isset($_GET['id'])) {
-    $activity = new activity(getActivityById($_GET['id']));
-    if (isset($_POST['register'])) {
-        registerForActivity($_GET['id'], $_COOKIE['CurrUser']);
-    }
-    }
+if (isset($_COOKIE['CurrUser'])) {
+    $user = new user(getUserById($_COOKIE['CurrUser']));
+    getActivitiesForUser($user->getId());
+}
 ?>
 <html>
 <head>
