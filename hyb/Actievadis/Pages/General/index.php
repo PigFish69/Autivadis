@@ -4,31 +4,35 @@ require_once "../../Database/activityFunctions.php";
 
 
 $currentDate = date('Y-m-d');
-$newDate = date('Y-m-d' ,strtotime('+1 month'));
+$newDate = date('Y-m-d', strtotime('+1 month'));
 
 $activities = getActivitysBetweenTime($currentDate, $newDate);
 
 
 ?>
 <html>
-    <head>
-    <link rel="stylesheet" href="../Css/index.css">
-    </head>
-    <body>
-        <h1>
-            Evenementen die eraan komen
-        </h1>
 
-        <div>
-        <?php while ($activity = $activities->fetch_assoc()) { 
-        ?><h2><?php 
-        $date = "" . $activity['startTime'];   
-        echo $activity['name'] . " - " . $date. "";
-         ?></h2>
-         <br>
-<?php } ?>
+<head>
+    <link rel="stylesheet" href="../../Css/index.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="topContent">
+            <div class="leftContent">
+                <div class="colorBackground"></div>
+                <div class="topText">Goedendag</div>
+            </div>
+            <div class="rightContent">
+                <img class="imageBackground" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxQjcB0XXmxs2wV4fpPxsDbjz4NlAhnmtLPQ&usqp=CAU">
+            </div>
         </div>
-    </body>
+
+
+</body>
+
 </html>
 
 <?php
