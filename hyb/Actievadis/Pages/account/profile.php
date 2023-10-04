@@ -1,10 +1,13 @@
 <?php
 require_once "../General/header.php";
 require_once "../../Class/HandyFunctions.php";
+require_once "../../Database/signUpFunctions.php";
+require_once "../../Database/activityFunctions.php";
 
 if (isset($_COOKIE['CurrUser'])) {
     $user = new user(getUserById($_COOKIE['CurrUser']));
-    getActivitiesForUser($user->getId());
+    $getActivityID = getActivitiesForUser($user->getId());
+    // $actiactivityData = (getActivityById($getActivityID));
 }
 ?>
 <html>
@@ -34,10 +37,10 @@ if (isset($_COOKIE['CurrUser'])) {
                     <img src="https://maken.wikiwijs.nl/generated/s960x720_3eb68a0fc0f8354d440713a2ed902b657cac8ef2.jpg">
                 </div>
                 <div class="Rightactivity">
-                    <h2></h2>
-                    <p><?php echo $activityData['location']?></p>
-                    <p></p>
-                    <p>Kosten: <?php echo "€" . number_format((float)$activityData['price'], 2, '.', '') ?></p>
+                    <h2><?php $actiactivityData['name'] ?></h2>
+                    <p><?php echo $actiactivityData['location']?></p>
+                    <p>date</p>
+                    <p>Kosten: <?php echo "€" . number_format((float)$actiactivityData['price'], 2, '.', '') ?></p>
                 </div>
             </div>
         </div>
