@@ -58,3 +58,6 @@ if (isset($_GET['id'])) {
 
 </html>
 
+<?php
+require_once "../General/footer.php";
+?>
