@@ -7,6 +7,12 @@ require_once "../../Database/activityFunctions.php";
 if (isset($_COOKIE['CurrUser'])) {
     $user = new user(getUserById($_COOKIE['CurrUser']));
     $getActivityID = getActivitiesForUser($user->getId());
+    $activities = [];
+    while($activity = $getActivityID->fetch_assoc())
+    {
+        // $activities = array(getActivityById($activity['activityId']));
+        array_push($activities, new activity(getActivityById($activity['activityId'])));
+    }
     // $actiactivityData = (getActivityById($getActivityID));
 }
 ?>
@@ -37,10 +43,17 @@ if (isset($_COOKIE['CurrUser'])) {
                     <img src="https://maken.wikiwijs.nl/generated/s960x720_3eb68a0fc0f8354d440713a2ed902b657cac8ef2.jpg">
                 </div>
                 <div class="Rightactivity">
-                    <h2><?php $actiactivityData['name'] ?></h2>
-                    <p><?php echo $actiactivityData['location']?></p>
+                    <?php
+                    foreach($activities as $activitiesData)
+                    {
+                    ?>
+                    <h2><?php echo $activitiesData['name']; ?></h2>
+                    <p><?php echo $activitiesData['location']?></p>
                     <p>date</p>
-                    <p>Kosten: <?php echo "€" . number_format((float)$actiactivityData['price'], 2, '.', '') ?></p>
+                    <p>Kosten: <?php echo "€" . number_format((float)$activitiesData['price'], 2, '.', '') ?></p>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
