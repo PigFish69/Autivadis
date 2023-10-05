@@ -43,7 +43,7 @@
                     <td><?php echo count(getAllUsersSignedUp($activity['id'])) ?></td>
                     <td>
                         <button class="functionBtn btnMoreInfo" title="Meer info" id="<?php echo $activity['id'] ?>"><i class="bi bi-three-dots"></i></button>
-                        <button class="functionBtn btnDelete" title="Meer info" id="<?php echo $activity['id'] ?>"><i class="bi bi-trash"></i></button>
+                        <button class="functionBtn btnDelete" title="Verwijderen" id="<?php echo $activity['id'] ?>"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <?php }?>
@@ -77,8 +77,11 @@
             window.location.href = `addActivity.php`;
         })
         $('#activityTable tbody').on('click', '.btnDelete', function() {
-            var id = $(this).attr('id');
-            window.location.href = `admin.php?id=${id}&type=activity`;
+            if (confirm("Weet je zeker dat je deze activiteit wil verweideren?\nAlle aanmeldingen worden ook verwijderd"))
+            {
+                var id = $(this).attr('id');
+                window.location.href = `admin.php?id=${id}&type=activity`;
+            }
         })
         $('#activityTable tbody').on('click', '.btnMoreInfo', function() {
             var id = $(this).attr('id');
