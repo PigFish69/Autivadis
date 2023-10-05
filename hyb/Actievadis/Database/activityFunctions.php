@@ -109,4 +109,18 @@ function signOutForActivity($userId, $activityId)
     db_doQuery($query);
     echo "Gelukt met afmelden";
 }
+
+function getAllUsersSignedUp($activityId)
+{
+    $query = "SELECT userId from signup WHERE activityId = ".$activityId;
+    $userids = db_getData($query);
+    $userArr = array();
+
+    while ($userId = $userids->fetch_assoc())
+    {
+        $user = new user(getUserById($userId['userId']));
+        array_push($userArr, $user);
+    }
+    return $userArr;
+}
 ?>
