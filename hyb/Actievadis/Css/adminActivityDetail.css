@@ -1,13 +1,13 @@
 .container {
-    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    background-color: #f5af00;
+} 
+
 .actImg {
-    max-width: 400px;
-    /* doe iets leuks  */
+    opacity: 0.5;
+    margin-left: -40px;
 }
+/*
 .card {
     border: 3px solid black;
     padding: 30px;
@@ -18,9 +18,35 @@
 }
 .cardText {
     text-wrap: wrap;
-}
-.txtDescription {
-    width: 400px;
-    min-height: 150px;
+}  */
+ .txtDescription {
+    width: 500px;
+    min-height: 70px;
     resize: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin-top: 5px;
+}
+
+.leftSide
+{
+    border-radius: 0 40px 0 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 50%;
+    background-color: #0f132f;
+    color: white;
+    padding-left: 80px;
+    z-index: 1;
+}
+
+.orange
+{
+    color: #f5af00;
+}
+
+.rightSide
+{
+    width: 50%;
 }

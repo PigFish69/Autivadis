@@ -14,7 +14,7 @@ include "../../Class/HandyFunctions.php";
             </div>
             <nav class="Navheader">
                 <ul class="MenuHeader">
-                    <li class="headerli"><a href="../General/index.php" class="headerA">Home</a></li>
+                    <li class="headerli"><a href="../Activities/overview.php" class="headerA">Activiteiten</a></li>
 
                     <?php
                 if (isset($_COOKIE['CurrUser'])) {
@@ -41,7 +41,6 @@ include "../../Class/HandyFunctions.php";
                         <?php
                         if (isset($_COOKIE['CurrUser'])) {
                         ?> 
-                        <li class="headerli"><a href="../Activities/overview.php" class="headerA">Activiteiten</a></li>
                         <li class="headerli"><a href="../account/profile.php" class="headerA"><?php 
                             $user = new user(getUserById($_COOKIE['CurrUser']));
                             echo $user->getUsername();
