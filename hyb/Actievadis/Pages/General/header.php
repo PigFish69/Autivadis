@@ -26,29 +26,31 @@ include "../../Class/HandyFunctions.php";
                     }
                 }
                 ?>
-                        <li class="headerli">
+                         <li><a href="../Account/login.php">
                         <?php
                         if (isset($_COOKIE['CurrUser'])) {
                         ?> 
-                            <a href="../Account/logout.php" class="headerA"><span class="ingelogd">Uitloggen</span>
-                        </a>
-                        <?php
-                        } else { ?>
-                            <li class="headerli"><a href="../Account/login.php" class="headerA">Inloggen</a></li>
-                        <?php } ?>
-                        </li>
-
-                        <?php
-                        if (isset($_COOKIE['CurrUser'])) {
-                        ?> 
-                        <li class="headerli"><a href="../account/profile.php" class="headerA"><?php 
+                            <a href="../account/profile.php" class="headerA"><?php 
                             $user = new user(getUserById($_COOKIE['CurrUser']));
                             echo $user->getUsername();
-                        ?></a></li>
+                        ?></a>
                         <?php
-                        }
-                        ?>
+                        } else { ?>
+                            <a href="../Account/login.php" class="headerA">Inloggen</a>
+                        <?php } ?>
+                    </a>
+                    <ul class="dropdown">
+                        <li>
+                            <?php
+                            if (isset($_COOKIE['CurrUser'])) {
+                            ?> 
+                                <a href="../account/logout.php" class="headerA">uitloggen</a>
+                            </a>
+                            <?php
+                            }?>
+                        </li>
 
+                    </ul>
                 </li>
                 </ul>
             </nav>
