@@ -74,12 +74,13 @@ function addNewActivity($name, $location, $food, $price, $description, $image, $
 function deleteActivityById($id)
 {
     $query = "DELETE FROM `activity` WHERE `activity`.`Id` = " . $id;
+    $queryDelSignups = "DELETE FROM signup WHERE activityId = " . $id;
     
     $activity = new activity(getActivityById($id));
     
     if (file_exists("../../Images/".$activity->getImage()))
     {
-        if (db_doQuery($query))
+        if (db_doQuery($query) && db_doQuery($queryDelSignups))
         {
             unlink("../../Images/".$activity->getImage());
         }
