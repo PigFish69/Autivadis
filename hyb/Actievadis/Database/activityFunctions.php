@@ -21,7 +21,7 @@ function getActivityById($activityId)
 {
     $query = "SELECT *
     FROM activity
-    WHERE id = '$activityId'";
+    WHERE id = '$activityId'";   
     $activity = db_getData($query);
     
     if ($activity->num_rows > 0) {

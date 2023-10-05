@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     $insertedId = insertUser($username, $password);
     if ($insertedId > 0) {
         setcookie("CurrUser", $insertedId, time() + 3600, "/", "");
-        header('location: ../General/index.php');
+        header('location: ../Activities/overview.php');
         exit();
     }
 }
