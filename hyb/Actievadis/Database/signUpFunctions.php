@@ -22,7 +22,7 @@ function getActivitiesForUser($userId)
     if ($allActivities->num_rows > 0) {
         return $allActivities;
     } else {
-        return "No activity found";
+        return null;
     }
 
     

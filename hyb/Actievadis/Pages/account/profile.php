@@ -7,12 +7,9 @@ require_once "../../Class/Activity.php";
 
 if (isset($_COOKIE['CurrUser'])) {
     $user = new user(getUserById($_COOKIE['CurrUser']));
-    $getActivityID = getActivitiesForUser($user->getId());
-    $activities = [];
-    while($activity = $getActivityID->fetch_assoc())
-    {
-        array_push($activities, new Activity(getActivityById($activity['activityId'])));
-    }
+
+    
+
     if (isset($_POST['bevestig'])) {
         $currentlyP = $_POST['currently'];
         $newP = $_POST['new'];
@@ -21,6 +18,8 @@ if (isset($_COOKIE['CurrUser'])) {
         {
             updatePassword($newP, $user->getId());
             echo '<script>alert("Wachtwoord vernieuwd")</script>';
+        }else{
+            echo '<script>alert("Wachtwoord fout")</script>';
         }
     }
 
@@ -56,6 +55,13 @@ if (isset($_COOKIE['CurrUser'])) {
         <div class="containerOverview">
             <div class="activiteitenOverview" id="<?php echo $activityData['id'] ?>">
             <?php
+                if($getActivityID = getActivitiesForUser($user->getId()))
+                {
+                    $activities = [];
+                    while($activity = $getActivityID->fetch_assoc())
+                    {
+                        array_push($activities, new Activity(getActivityById($activity['activityId'])));
+                    }
                     foreach($activities as $activitiesData)
                     {
                     ?>
@@ -74,6 +80,7 @@ if (isset($_COOKIE['CurrUser'])) {
                 <?php
                     }
                 }
+            }
                     ?>
             </div>
         </div>
