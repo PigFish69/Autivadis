@@ -21,7 +21,7 @@ function getActivityById($activityId)
 {
     $query = "SELECT *
     FROM activity
-    WHERE id = '$activityId'";
+    WHERE id = '$activityId'";   
     $activity = db_getData($query);
     
     if ($activity->num_rows > 0) {
@@ -108,5 +108,19 @@ function signOutForActivity($userId, $activityId)
     $query = "DELETE FROM `signup` WHERE signup.activityId = '$activityId' AND signup.userId = '$userId'";
     db_doQuery($query);
     echo "Gelukt met afmelden";
+}
+
+function getAllUsersSignedUp($activityId)
+{
+    $query = "SELECT userId from signup WHERE activityId = ".$activityId;
+    $userids = db_getData($query);
+    $userArr = array();
+
+    while ($userId = $userids->fetch_assoc())
+    {
+        $user = new user(getUserById($userId['userId']));
+        array_push($userArr, $user);
+    }
+    return $userArr;
 }
 ?>

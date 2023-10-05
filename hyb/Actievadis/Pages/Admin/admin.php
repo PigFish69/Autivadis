@@ -27,6 +27,7 @@
                     <th>Voedsel</th>
                     <th>Prijs</th>
                     <th>Start tijd</th>
+                    <th>Aanmeldingen</th>
                     <th>Functies</th>
                 </tr>
             </thead>
@@ -39,6 +40,7 @@
                     <td><?php echo boolToYesNo($activity['food'])?></td>
                     <td><?php echo "€" . number_format((float)$activity['price'], 2, '.', '')?></td>
                     <td><?php echo $activity['startTime']?></td>
+                    <td><?php echo count(getAllUsersSignedUp($activity['id'])) ?></td>
                     <td>
                         <button class="functionBtn btnMoreInfo" title="Meer info" id="<?php echo $activity['id'] ?>"><i class="bi bi-three-dots"></i></button>
                         <button class="functionBtn btnDelete" title="Meer info" id="<?php echo $activity['id'] ?>"><i class="bi bi-trash"></i></button>
@@ -60,11 +62,12 @@
 
         $('#activityTable').DataTable({
             "columns": [
-                {"data": "username"},
-                {"data": "password"},
-                {"data": "email"},
-                {"data": "fullName"},
-                {"data": "admin"},
+                {"data": "name"},
+                {"data": "location"},
+                {"data": "food"},
+                {"data": "price"},
+                {"data": "start-time"},
+                {"data": "amt_signedUp"},
                 {"data": "functions"}
             ]
         });

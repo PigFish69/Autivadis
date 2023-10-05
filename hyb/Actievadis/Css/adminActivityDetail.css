@@ -11,7 +11,7 @@
 .card {
     border: 3px solid black;
     padding: 30px;
-    width: 400px;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,4 +49,11 @@
 .rightSide
 {
     width: 50%;
+}
+#signUpTable {
+    width: 700px;
+    
+}
+#signUpTable {
+    width: 700px;
 }
