@@ -47,6 +47,7 @@ class activity {
             $this->image = $image;
             $this->startTime = $startTime;
             $this->endTime = $endTime;
+            return $this;
         } catch (\Throwable $th) {
             //throw $th;
             echo "Error: ".$th;
