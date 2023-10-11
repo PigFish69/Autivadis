@@ -43,7 +43,7 @@ if (isset($_GET['id']) && isset($_GET['userId'])) {
                         <img src="../../Images/<?php echo $activityData['image'] ?>" />
                         <div class="cardText">
                             <h2><?php echo $activityData['name'] ?></h2>
-                            <p>Begin tijd: <?php echo getStartDate($activityData['startTime']); ?></p>
+                            <p>Begin tijd: <?php echo formateDate($activityData['startTime']); ?></p>
                             <p>Kosten: <?php echo "€" . number_format((float)$activityData['price'], 2, '.', '') ?></p>
                         </div>
                     </div>

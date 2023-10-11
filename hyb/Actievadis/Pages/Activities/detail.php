@@ -49,7 +49,7 @@ if (isset($_GET['id'])) {
             <menu class="menuDetail">
                 <h2 class="h2">Details</h2>
                 <li class="detailli location"><?php echo $activity->getLocation(); ?></li>
-                <li class="detailli date"><?php echo getStartDate($activity->getStartTime()) . " tot " . getStartDate($activity->getEndTime()); ?></li>
+                <li class="detailli date"><?php echo formateDate($activity->getStartTime()) . " tot " . formateDate($activity->getEndTime()); ?></li>
                 <li class="detailli price"><?php echo "€" . number_format((float)$activity->getPrice(), 2, '.', '')?></li>
                 <li class="detailli food"><?php echo boolToYesNo($activity->getFood());?></li>
             </menu>

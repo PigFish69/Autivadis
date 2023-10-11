@@ -16,7 +16,7 @@ function console_log($output, $with_script_tags = true)
     echo $js_code;
 }
 
-function getStartDate($date)
+function formateDate($date)
     {
         return date("d-m-Y H:i", strtotime($date));
     }
