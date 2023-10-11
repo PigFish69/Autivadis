@@ -124,12 +124,6 @@ class activity {
     {
         return $this->endTime;
     }
-
-    public function getStartEndDate()
-    {
-
-        return date("d-m-Y H:i", strtotime($this->startTime)) . " tot " . date("d-m-Y H:i", strtotime($this->endTime)) ;
-    }
     
 }
 ?>
