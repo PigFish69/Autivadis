@@ -71,6 +71,25 @@ function addNewActivity($name, $location, $food, $price, $description, $image, $
     $mysqli->close();
 }
 
+function updateActivity($activity) 
+{
+    $mysqli = db_connect();
+    $query = $mysqli->prepare("UPDATE `activity` SET `name` = ?, `location` = ?, `food` = ?, 
+    `price` = ?, `description` = ?, `startTime` = ?, `endTime` = ? 
+    WHERE `activity`.`id` = ?");
+    $query->bind_param("ssidsssi", $nameQ, $locationQ, $foodQ, $priceQ, $descriptionQ, $startTimeQ, $endTimeQ, $idQ);
+    $nameQ = $activity->getName();
+    $locationQ = $activity->getLocation();
+    $foodQ = ($activity->getFood()) ? true : false;
+    $priceQ = $activity->getPrice();
+    $descriptionQ = $activity->getDescription();
+    $startTimeQ = $activity->getStartTime();
+    $endTimeQ = $activity->getEndTime();
+    $idQ = $activity->getId();
+    $query->execute();
+    $mysqli->close();
+}
+
 function deleteActivityById($id)
 {
     $query = "DELETE FROM `activity` WHERE `activity`.`Id` = " . $id;

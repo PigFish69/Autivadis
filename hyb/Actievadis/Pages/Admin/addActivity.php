@@ -4,31 +4,36 @@ include "../../Database/activityFunctions.php";
 
 if (isset($_POST['btnSubmit']))
 {
-    $img = $_FILES['imgActivity']['name'];
-    $target_dir = "../../Images/";
-    $target_file = $target_dir . basename($img);
-    $imgName = basename($img);
-    $uploadOk = 1;
+    if (formateDate($_POST["txtStartTime"]) > formateDate($_POST["txtEndTime"]))
+    {
+        echo "Start tijd is na de eind tijd.";
+    } else {
+        $img = $_FILES['imgActivity']['name'];
+        $target_dir = "../../Images/";
+        $target_file = $target_dir . basename($img);
+        $imgName = basename($img);
+        $uploadOk = 1;
 
-    // Check if file already exists
-    if (file_exists($target_file)) {
-        echo "Sorry, bestand bestaat al";
-        $uploadOk = 0;
-    }
-    // Check file size
-    if ($_FILES["imgActivity"]["size"] > 9000000) {
-        echo "Sorry, bestand is te groot";
-        $uploadOk = 0;
-    }
-    if ($uploadOk == 1) {
-        if (move_uploaded_file($_FILES["imgActivity"]["tmp_name"], $target_file)) {
-            addNewActivity($_POST["txtName"], $_POST["txtLocation"], $_POST["chbFood"], 
-            $_POST["txtPrice"], $_POST["txtDescription"], $imgName, $_POST["txtStartTime"], $_POST["txtEndTime"]);
-            
-            header('Location: admin.php');
-            exit();
-        } else {
-            echo "Sorry, er is iets fout gegaan met het uploaden van het bestand";
+        // Check if file already exists
+        if (file_exists($target_file)) {
+            echo "Sorry, bestand bestaat al";
+            $uploadOk = 0;
+        }
+        // Check file size
+        if ($_FILES["imgActivity"]["size"] > 9000000) {
+            echo "Sorry, bestand is te groot";
+            $uploadOk = 0;
+        }
+        if ($uploadOk == 1) {
+            if (move_uploaded_file($_FILES["imgActivity"]["tmp_name"], $target_file)) {
+                addNewActivity($_POST["txtName"], $_POST["txtLocation"], $_POST["chbFood"], 
+                $_POST["txtPrice"], $_POST["txtDescription"], $imgName, $_POST["txtStartTime"], $_POST["txtEndTime"]);
+                
+                header('Location: admin.php');
+                exit();
+            } else {
+                echo "Sorry, er is iets fout gegaan met het uploaden van het bestand";
+            }
         }
     }
 }
