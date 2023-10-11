@@ -2,6 +2,7 @@
     //include header & shite
     require_once "../General/header.php";
     require_once "../../Database/activityFunctions.php";
+    require_once "../../Class/HandyFunctions.php";
 
     if (isset($_GET['id']) && isset($_GET['type']))
     {
@@ -39,7 +40,7 @@
                     <td><?php echo $activity['location']?></td>
                     <td><?php echo boolToYesNo($activity['food'])?></td>
                     <td><?php echo "€" . number_format((float)$activity['price'], 2, '.', '')?></td>
-                    <td><?php echo $activity['startTime']?></td>
+                    <td><?php echo formateDate($activity['startTime']);?></td>
                     <td><?php echo count(getAllUsersSignedUp($activity['id'])) ?></td>
                     <td>
                         <button class="functionBtn btnMoreInfo" title="Meer info" id="<?php echo $activity['id'] ?>"><i class="bi bi-three-dots"></i></button>
