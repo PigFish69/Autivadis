@@ -33,6 +33,10 @@ if (isset($_POST['btnSubmit']))
     }
 }
 ?>
+<head>
+    <link rel="stylesheet" href="../../Css/addActivity.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Open+Sans:wght@500;600;800&family=Rubik:wght@500&display=swap" rel="stylesheet">
+</head>
 <body>
     <div class="container">
         <form action="#" method="post" enctype="multipart/form-data">
