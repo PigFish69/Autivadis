@@ -39,7 +39,7 @@
     width: 30.21px;
 }
 .btnDelete {
-    background-color: #f5af00;
+    background-color: red;
     color: white;
 }
 .btnDelete i {
@@ -50,4 +50,8 @@
     font-size: 50px;
     font-weight: 700;
     text-align: center;
+}
+.btnEdit {
+    background-color: #f5af00;
+    color: white;
 }
