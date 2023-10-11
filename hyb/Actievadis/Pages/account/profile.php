@@ -36,24 +36,22 @@ if (isset($_COOKIE['CurrUser'])) {
             <p>Bekijk hieronder je opgegeven gegevens</p>
     
             <ul class="menuGebruikergegevens">
-                <h3>Gebruikernaam:</h3>
+                <h3 class="ulH3">Gebruikernaam:</h3>
                 <li><?php echo $user->getUsername();?></li>
-                <h3>Email:</h3>
+                <h3 class="ulH3">Email:</h3>
                 <li>voorbeeld@nu.nl</li>
-                <h3>Huidig wachtwoord:</h3>
+                <h3 class="ulH3">Huidig wachtwoord:</h3>
                 <form action="" method="post">
-                <input type="password" id="currently" name="currently"><br>
-                <h3>Nieuw wachtwoord:</h3>
-                <input type="password" id="new" name="new"><br>
+                <input type="password" id="currently" name="currently" class="textFieldUL"><br>
+                <h3 class="ulH3">Nieuw wachtwoord:</h3>
+                <input type="password" id="new" name="new" class="textFieldUL"><br>
                 <input type="submit" name="bevestig" class="btn">
                 </form>
             </ul>
-    
-            <h2 class="h2Overview"><bold><?php ?></bold> opgegeven activiteiten</h2>
         </div>
     
         <div class="containerOverview">
-            <div class="activiteitenOverview" id="<?php echo $activityData['id'] ?>">
+            <div class="activiteitenOverview" id="">
             <?php
                 if($getActivityID = getActivitiesForUser($user->getId()))
                 {
@@ -65,18 +63,20 @@ if (isset($_COOKIE['CurrUser'])) {
                     foreach($activities as $activitiesData)
                     {
                     ?>
-                <div class="Leftactivity">
-               
-                    <img src="../../Images/<?php echo $activitiesData->getImage(); ?>">
-                </div>
-                <div class="Rightactivity">
-                    
+                <div class="containerActivityElement">
+                    <div class="Leftactivity">
+                
+                        <img src="../../Images/<?php echo $activitiesData->getImage(); ?>" width="300px" height="400px">
+                    </div>
+                    <div class="Rightactivity">
+                        
 
-                    <h2><?php echo $activitiesData->getname(); ?></h2>
-                    <p><?php echo $activitiesData->getlocation(); ?></p>
-                    <p>Kosten: <?php echo "€" . number_format((float)$activitiesData->getprice(), 2, '.', '') ?></p>
-                   
-                </div>
+                        <h2><?php echo $activitiesData->getname(); ?></h2>
+                        <p><?php echo $activitiesData->getlocation(); ?></p>
+                        <p>Kosten: <?php echo "€" . number_format((float)$activitiesData->getprice(), 2, '.', '') ?></p>
+                    
+                    </div>
+                </div>    
                 <?php
                     }
                 }
