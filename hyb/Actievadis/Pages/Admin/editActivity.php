@@ -17,12 +17,17 @@ if (isset($_POST['btnSubmit']))
     $image = $activity->getImage();
     $startTime = $_POST['txtStartTime'];
     $endTime = $_POST['txtEndTime'];
-    
-    $emptyActivity = new activity();
-    $updatedActivity = $emptyActivity->setActivity($id, $name, $location, $food, $price, $description, $image, $startTime, $endTime);
-    updateActivity($updatedActivity);
-    header('Location: admin.php');
-    exit();
+
+    if (formateDate($startTime) > formateDate($endTime))
+    {
+        echo "Start tijd is na de eind tijd.";
+    } else {
+        $emptyActivity = new activity();
+        $updatedActivity = $emptyActivity->setActivity($id, $name, $location, $food, $price, $description, $image, $startTime, $endTime);
+        updateActivity($updatedActivity);
+        header('Location: admin.php');
+        exit();
+    }
 }
 ?>
 <link rel="stylesheet" href="../../Css/editActivity.css">
