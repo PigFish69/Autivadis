@@ -44,6 +44,7 @@ if (isset($_GET['id'])) {
                 }
                 ?>
             </form>    
+            <a href="overview.php"><button class="terugButton">Terug</button></a>
         </div> 
         <div class="menuCard">
             <menu class="menuDetail">
