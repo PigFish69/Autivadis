@@ -41,6 +41,7 @@ if (isset($_GET['id']))
                 <?php $usersSignedUp = getAllUsersSignedUp($activity->getId());?>
                 <h2>Totaal aangemeld: <?php echo count($usersSignedUp)?></h2>
                 </div>
+                <a href="admin.php"><button class="terugButton">Terug</button></a>
             </div>
             <div class="rightSide">
                 <img src="../../Images/<?php echo $activity->getImage()?>" class="actImg">    
