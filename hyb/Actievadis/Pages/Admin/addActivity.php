@@ -81,6 +81,7 @@ if (isset($_POST['btnSubmit']))
             </tr>
         </table>    
         </form>
+        <a href="admin.php"><button>Terug</button></a>
     </div>
 </body>
 <?php
