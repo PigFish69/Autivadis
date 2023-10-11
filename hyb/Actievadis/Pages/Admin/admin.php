@@ -25,7 +25,7 @@
                 <tr>
                     <th>Naam</th>
                     <th>Locatie</th>
-                    <th>Voedsel</th>
+                    <th>Eten</th>
                     <th>Prijs</th>
                     <th>Start tijd</th>
                     <th>Aanmeldingen</th>
