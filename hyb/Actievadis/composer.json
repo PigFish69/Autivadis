@@ -1,0 +1,18 @@
+{
+    "name": "mailing/autivadis",
+    "description": "Project to create and sign up for activities. and getting conformatian email.",
+    "autoload": {
+        "psr-4": {
+            "Mailing\\Autivadis\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rick Snijders",
+            "email": "97365268+LoneOmegaWolf@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    }
+}
