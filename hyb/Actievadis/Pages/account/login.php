@@ -4,10 +4,10 @@ require_once "../../Database/userFunctions.php";
 
 if(isset($_POST['submit']))
 {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $user = getUser($username, $password);
+    $user = getUser($email, $password);
 
     if($user == "No user found!")
     {
@@ -46,8 +46,8 @@ if(isset($_POST['submit']))
             <form action="" method="post">
                 <div class="form-group">
                     <!-- <label>Username</label> -->
-                    <h3>Gebruikersnaam</h3>
-                    <input type="text" name="username" class="form-control" value="" required>
+                    <h3>Email</h3>
+                    <input type="email" name="email" class="form-control" value="" required>
                 </div>    
                 <div class="form-group">
                     <!-- <label>Password</label> -->
