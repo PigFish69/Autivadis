@@ -4,6 +4,11 @@
     require_once "../../Database/activityFunctions.php";
     require_once "../../Class/HandyFunctions.php";
 
+    if (isset($_GET['added']))
+    {
+        echo '<script>alert("Succesvol toegevoegt")</script>';
+    }
+
     if (isset($_GET['id']) && isset($_GET['type']))
     {
         if ($_GET['type'] == 'activity')

@@ -2,8 +2,8 @@
 
 require_once ("databaseFunctions.php");
 require_once ("../../Class/User.php");
-function getUser($username, $password){
-    $user = db_getData("SELECT * FROM user WHERE username = '$username' AND password = '$password'");
+function getUser($email, $password){
+    $user = db_getData("SELECT * FROM user WHERE email = '$email' AND password = '$password'");
     if ($user->num_rows > 0){
         return $user;
     }
