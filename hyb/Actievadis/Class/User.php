@@ -14,9 +14,9 @@ class user {
                 $userArr = $sqlResult->fetch_row();
                 $this->id = $userArr[0];
                 $this->username = $userArr[1];
-                $this->email = $userArr[2];
-                $this->password = $userArr[3];
-                $this->admin = $userArr[4];
+                $this->email = $userArr[4];
+                $this->password = $userArr[2];
+                $this->admin = $userArr[3];
             } else {
                 return $this;
             }
