@@ -120,11 +120,11 @@ function registerForActivity($userId, $activityId)
 
     // check if Users is already signed up for activity
     if ($data->num_rows > 0) {
-        echo "Je bent al ingeschreven";
+        echo '<script>alert("Je bent al ingeschreven")</script>';
     } else {
         $query = "INSERT INTO signup (id, activityId, userId) VALUES ('0', '$activityId', '$userId')";
         db_insertData($query);
-        echo "Gelukt gebruiker heeft zich aangemeld voor deze activiteit";
+        echo '<script>alert("Gelukt gebruiker heeft zich aangemeld voor deze activiteit")</script>';
     }
 }
 
@@ -132,7 +132,7 @@ function signOutForActivity($userId, $activityId)
 {
     $query = "DELETE FROM `signup` WHERE signup.activityId = '$activityId' AND signup.userId = '$userId'";
     db_doQuery($query);
-    echo "Gelukt met afmelden";
+    echo '<script>alert("Gelukt met afmelden")</script>';
 }
 
 function getAllUsersSignedUp($activityId)
