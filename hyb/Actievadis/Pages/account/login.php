@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
 
     if($user == "No user found!")
     {
-        echo '<script>alert("geen gebruiker gevonden!")</script>';
+        echo '<script>alert("Er is al een account voor dit email")</script>';
     }else
     {
         setcookie("CurrUser", (new user($user))->getId(), time() + 3600, "/", "");

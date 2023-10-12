@@ -29,7 +29,7 @@ if (isset($_POST['btnSubmit']))
                 addNewActivity($_POST["txtName"], $_POST["txtLocation"], $_POST["chbFood"], 
                 $_POST["txtPrice"], $_POST["txtDescription"], $imgName, $_POST["txtStartTime"], $_POST["txtEndTime"]);
                 
-                header('Location: admin.php');
+                header('Location: admin.php?added=true');
                 exit();
             } else {
                 echo "Sorry, er is iets fout gegaan met het uploaden van het bestand";
