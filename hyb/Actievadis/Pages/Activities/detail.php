@@ -28,18 +28,20 @@ if (isset($_GET['id'])) {
             <h1 class="text h1"><?php echo $activity->getName(); ?></h1>
             <p class="text omschrijving"><?php echo $activity->getDescription(); ?></p>
             <form method="post" action="">
+                <?php if (!isset($_COOKIE['CurrUser'])) {?>
+                    <a href="../Account/login.php" class="btn noUnderline" title="Log in om aan te melden.">Inloggen</a>
+                <?php } else {?>
                 <?php 
                     if(!alreadySignUp($_GET['id'], $_COOKIE['CurrUser']))
                     {
                 ?>
                 <button type="submit" name="register" class="btn">Inschrijven?</button>
                 <?php
-                    }
-                    if(alreadySignUp($_GET['id'], $_COOKIE['CurrUser']))
-                    {
+                    } else {
                 ?>
                 <button type="submit" name="signOut" class="btn">Uitschrijven?</button>
                 <?php
+                        }
                     }
                 }
                 ?>
