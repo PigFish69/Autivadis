@@ -52,8 +52,8 @@ END:VCALENDAR";
         file_put_contents($icsFileName, $ics);
 
         // Determine the URL for the ICS file on localhost
-        $baseUrl = 'http://127.0.0.1/Autivadis/hyb/Actievadis';  // Replace with your website's base URL
-        $icsUrl = $baseUrl . '/' . basename(__FILE__) . '/' . $icsFileName;
+        $baseUrl = 'http://127.0.0.1/Autivadis/hyb/Actievadis/Pages/Activities';  // Replace with your website's base URL
+        $icsUrl = $baseUrl . '/' . $icsFileName;
 
         // Recipient's email address
         $to = $user->getEmail(); // Replace with the recipient's Outlook email
@@ -75,8 +75,7 @@ END:VCALENDAR";
         $mail->Port = 587;
 
         // Compose the email message
-        $message = "Klik op de link hier onder om deze activiteit toe tevoegen aan uw kalender:<br>";
-        $message .= '<a href="' . $icsUrl . '">Voeg toe aan kalender</a>';
+        $message = "In gmail druk op voeg toe aan kalender. <br> In outlook druk op de bijlage en voeg toe aan agenda";
 
         // Set the "From" email address
         $mail->setFrom($fromEmail, 'Autivadis');
