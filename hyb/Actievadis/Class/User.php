@@ -2,6 +2,7 @@
 class user {
     private $id;
     private $username;
+    private $email;
     private $password;
     private $admin;
 
@@ -13,8 +14,9 @@ class user {
                 $userArr = $sqlResult->fetch_row();
                 $this->id = $userArr[0];
                 $this->username = $userArr[1];
-                $this->password = $userArr[2];
-                $this->admin = $userArr[3];
+                $this->email = $userArr[2];
+                $this->password = $userArr[3];
+                $this->admin = $userArr[4];
             } else {
                 return $this;
             }
@@ -26,11 +28,12 @@ class user {
         
     }
     
-    function setUser($id, $username, $password, $admin)
+    function setUser($id, $username, $email, $password, $admin)
     {
         try {
             $this->id = $id;
             $this->username = $username;
+            $this->email = $email;
             $this->password = $password;
             $this->admin = $admin;
             return $this;
@@ -55,6 +58,13 @@ class user {
     public function getUsername()
     {
         return $this->username;
+    }
+     /**
+     * Get the value of email
+     */ 
+    public function getEmail()
+    {
+        return $this->email;
     }
 
     /**
