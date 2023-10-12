@@ -49,7 +49,7 @@ else{
                     <input type="password" name="confirm_password" class="form-control" value="" required>
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btn btn-warning" value="Submit" name="submit">
+                    <input type="submit" class="btn" value="Verzenden" name="submit">
                 </div>
                 <p>Heb je al een account? <a href="login.php" class="linkColorText">Login hier</a>.</p>
             </form>

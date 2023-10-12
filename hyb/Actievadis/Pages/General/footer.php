@@ -8,7 +8,7 @@
             <div class="Info">
                 <ul class="Menu">
                     <li>© Actievadis 2023 </li>
-                    <li><a href="../General/index.php">Home</a></li>
+                    <li><a href="../Activities/overview.php">Activiteiten</a></li>
                     <li>|</li>
                     <li>Alle rechten voorbehouden</li>
                 </ul>
