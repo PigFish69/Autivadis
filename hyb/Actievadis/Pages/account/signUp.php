@@ -5,13 +5,20 @@ require_once "../../Database/userFunctions.php";
 if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
-
-    $insertedId = insertUser($username, $password);
+    $confirm = $_POST['confirm_password'];
+    if($password == $confirm)
+    {
+        $insertedId = insertUser($username, $password);
+    
     if ($insertedId > 0) {
         setcookie("CurrUser", $insertedId, time() + 3600, "/", "");
         header('location: ../Activities/overview.php');
         exit();
     }
+}
+else{
+    echo '<script>alert("Wachtwoord bevestigen fout")</script>';
+}
 }
 ?>
 
