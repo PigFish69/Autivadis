@@ -47,7 +47,7 @@ if(isset($_POST['submit']))
                 <div class="form-group">
                     <!-- <label>Username</label> -->
                     <h3>Email</h3>
-                    <input type="text" name="email" class="form-control" value="" required>
+                    <input type="email" name="email" class="form-control" value="" required>
                 </div>    
                 <div class="form-group">
                     <!-- <label>Password</label> -->
