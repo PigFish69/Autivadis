@@ -36,7 +36,9 @@ if (isset($_GET['id']) && isset($_GET['userId'])) {
         <div class="containerCards">
             <div class="activityCards">
                 <?php
-                $activities = getAllActivities();
+                $currentDate = date("Y-m-d");
+                $activities = getAllActivitiesFromNow($currentDate);
+                // print_r($activities);
                 while ($activityData = $activities->fetch_assoc()) {
                 ?>
                     <div class="card" id="<?php echo $activityData['id'] ?>">
