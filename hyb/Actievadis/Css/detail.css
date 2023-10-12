@@ -93,6 +93,14 @@
     padding: 5px;
 }
 
+.noUnderline {
+    text-decoration: none;
+}
+
+form {
+    margin-top: 20px !important;
+}
+
 .btn:hover
 {
     background-color: #f5af00;
