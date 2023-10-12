@@ -56,7 +56,7 @@ if (isset($_POST['btnSubmit']))
                     <td><input type="text" name="txtName" required></td>
                 </tr>
                 <tr>
-                    <td>Location</td>
+                    <td>Locatie</td>
                 </tr>
                 <tr>
                     <td><input type="text" name="txtLocation" required></td>
