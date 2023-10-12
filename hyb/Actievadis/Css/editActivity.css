@@ -1,0 +1,104 @@
+.container {
+    background-color: #0f132f;
+    display: flex;
+}
+
+.leftSide
+{
+    background-color: #f8f8f8;
+    width: 65%;
+    padding-left: 100px;
+    padding: 20px 20px 20px 100px;
+}
+
+.pBlue
+{
+    color: #f5af00;
+}
+
+input::file-selector-button {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: auto;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #f5af00;
+    color: #f5af00;
+    font-size: 15px;
+    font-weight: 700;
+    /* padding: 5px; */
+}
+
+.buttonTable
+{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: auto;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #f5af00;
+    color: #f5af00;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.buttonTable:hover
+{
+    background-color: #f5af00;
+    color: white;
+    cursor: pointer;
+}
+
+.terugButton
+{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: auto;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #0f132f;
+    color: #0f132f;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.terugButton:hover
+{
+    background-color: #0f132f;
+    color: white;
+    cursor: pointer;
+}
+
+.Rightside
+{
+    background-color: #f5af00;
+    width: 45%;
+    margin-top: 50px;
+    margin-left: -40px;
+    height: 350px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.listActivityIdeas
+{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.pColor
+{
+    color: white;
+}
