@@ -2,6 +2,7 @@
 require_once "../General/header.php";
 require_once "../../Database/activityFunctions.php";
 require_once "../../Database/signUpFunctions.php";
+require_once "../../Class/HandyFunctions.php";
 
 if (isset($_GET['id'])) {
     $activity = new activity(getActivityById($_GET['id']));
@@ -43,12 +44,13 @@ if (isset($_GET['id'])) {
                 }
                 ?>
             </form>    
+            <a href="overview.php"><button class="terugButton">Terug</button></a>
         </div> 
         <div class="menuCard">
             <menu class="menuDetail">
                 <h2 class="h2">Details</h2>
                 <li class="detailli location"><?php echo $activity->getLocation(); ?></li>
-                <li class="detailli date"><?php echo $activity->getDate(); ?></li>
+                <li class="detailli date"><?php echo formateDate($activity->getStartTime()) . " tot " . formateDate($activity->getEndTime()); ?></li>
                 <li class="detailli price"><?php echo "€" . number_format((float)$activity->getPrice(), 2, '.', '')?></li>
                 <li class="detailli food"><?php echo boolToYesNo($activity->getFood());?></li>
             </menu>
@@ -58,3 +60,6 @@ if (isset($_GET['id'])) {
 
 </html>
 
+<?php
+require_once "../General/footer.php";
+?>

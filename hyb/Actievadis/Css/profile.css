@@ -25,12 +25,24 @@ body
 
 .h2Overview
 {
-    margin-top: 100px;
+    margin-top: 50px;
+}
+
+.textFieldUL
+{
+    background-color: #f8f8f8;
+    border: none;
 }
 
 .containerOverview
 {
     width: 50%;
+}
+
+.containerActivityElement
+{
+    display: flex;
+    margin-top: 10px;
 }
 
 .activiteitenOverview
@@ -40,10 +52,43 @@ body
     margin-top: 20px;
     margin-bottom: 20px;
     align-items: center;
+    flex-direction: column;
+}
+
+.ulH3
+{
+    margin-bottom: 5px;
 }
 
 .Rightactivity
 {
     text-align: center;
-    width: 25%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.btn
+{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: auto;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #f5af00;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.btn:hover
+{
+    background-color: #f5af00;
+    border-radius: 5px;
+    border: 2px solid #f5af00;
+    color: white;
+    cursor: pointer;
 }

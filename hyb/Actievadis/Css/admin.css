@@ -1,24 +1,57 @@
 .containerTable {
-    padding: 0 20%;
+    margin: 0 20%;
+    padding: 20px;
+    border-radius: 0 40px 0 40px;
+    margin-bottom: 120px;
 }
 
 .containerTable h3 {
     text-align: center;
 }
 .btnMoreInfo {
-    background-color: darkturquoise;
+    background-color: #0f132f;
+}
+
+.btnMoreInfo {
+    color: white;
 }
 .btnAddActivity {
-    background-color: #8FEB91; 
+    width: auto;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #f5af00;
+    color: #f5af00;
+    font-size: 15px;
+    font-weight: 700;
     padding: 5px;
+}
+
+.btnAddActivity:hover{
+    background-color: #f5af00;
+    border-radius: 5px;
+    border: 2px solid #f5af00;
+    color: white;
+    cursor: pointer;
 }
 .functionBtn {
     height: 30.21px;
     width: 30.21px;
 }
 .btnDelete {
-    background-color: #8e2607;
+    background-color: #f5af00;
+    color: white;
 }
 .btnDelete i {
-    color: rgb(203, 189, 189);
+    color: white;
+}
+
+.bold {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+.btnEdit {
+    background-color: #f8f8f8;
+    color: #0f132f;
 }

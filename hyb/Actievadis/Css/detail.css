@@ -102,3 +102,27 @@
     cursor: pointer;
 }
 
+.terugButton
+{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: auto;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+    margin-left: 125px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.terugButton:hover
+{
+    background-color: white;
+    color: #f5af00;
+    cursor: pointer;
+}
+

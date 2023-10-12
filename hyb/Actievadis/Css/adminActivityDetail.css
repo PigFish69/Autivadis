@@ -1,26 +1,96 @@
 .container {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    /* display: flex; */
+    background-color: #f5af00;
+} 
+
 .actImg {
-    max-width: 400px;
-    /* doe iets leuks  */
+    opacity: 0.5;
+    width: 100%;
+    height: 660px;
 }
-.card {
-    border: 3px solid black;
-    padding: 30px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.cardText {
-    text-wrap: wrap;
-}
-.txtDescription {
-    width: 400px;
-    min-height: 150px;
+
+ .txtDescription {
+    width: 500px;
+    min-height: 70px;
     resize: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin-top: 5px;
+}
+
+.leftSide
+{
+    border-radius: 0 40px 0 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 50%;
+    background-color: #0f132f;
+    color: white;
+    padding-left: 80px;
+    z-index: 1;
+}
+
+.orange
+{
+    color: #f5af00;
+}
+
+.rightSide
+{
+    width: 50%;
+}
+
+.topInfo
+{
+    width: 100%;
+    display: flex;
+}
+
+.whiteTable
+{
+    display: flex;
+    justify-content: center;
+}
+
+.bottomtable
+{
+    background-color: white;
+    border-radius: 0 40px 0 40px;
+    width: 20%;
+    margin-top: -600px;
+    z-index: 2;
+    height: 540px;
+    padding: 10px;
+}
+
+.table
+{
+    margin-top: 15px;
+}
+
+.textH3
+{
+    text-align: center;
+}
+.terugButton
+{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: auto;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.terugButton:hover
+{
+    background-color: white;
+    color: #f5af00;
 }
