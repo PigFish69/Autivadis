@@ -4,12 +4,19 @@ require_once "../../Database/userFunctions.php";
 
 if(isset($_POST['submit'])){
     $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm = $_POST['confirm_password'];
     if($password == $confirm)
     {
-        $insertedId = insertUser($username, $password);
-    
+        if(checkEmail($email) == "No user found!")
+        {
+            $insertedId = insertUser($username, $email, $password);
+        }else{
+            echo '<script>alert("Er is al een account voor dit email")</script>';
+        }
+        
+
     if ($insertedId > 0) {
         setcookie("CurrUser", $insertedId, time() + 3600, "/", "");
         header('location: ../Activities/overview.php');
@@ -39,7 +46,11 @@ else{
                 <div class="form-group">
                     <h3>Gebruiker</h3>
                     <input type="text" name="username" class="form-control" value="" required>
-                </div>    
+                </div>   
+                <div class="form-group">
+                    <h3>Email</h3>
+                    <input type="email" name="email" class="form-control" value="" required>
+                </div>  
                 <div class="form-group">
                     <h3  class="titleh3">Wachtwoord</h3>
                     <input type="password" name="password" class="form-control" value="" required>

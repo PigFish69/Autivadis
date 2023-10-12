@@ -4,10 +4,10 @@ require_once "../../Database/userFunctions.php";
 
 if(isset($_POST['submit']))
 {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $user = getUser($username, $password);
+    $user = getUser($email, $password);
 
     if($user == "No user found!")
     {
@@ -45,14 +45,14 @@ if(isset($_POST['submit']))
         <div class="infoCard">
             <p class="text p">Welke activiteiten zijn er de komende tijd</p>
             <h1 class="text h1">Login</h1>
-            <p class="text omschrijving">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quaerat ratione molestias iure suscipit, ullam magnam eveniet provident praesentium voluptatibus iusto illo optio enim? Blanditiis dicta vitae, provident excepturi, quae optio aliquid, aspernatur nostrum aliquam officia recusandae. Repudiandae, nesciunt rerum explicabo odit soluta laudantium sint ipsa iusto assumenda eum consectetur!</p>
+            <p class="text omschrijving">Je moet ingelogt zijn om te kunnen aanmelden voor activiteiten.</p>
         </div> 
         <div class="login"> 
             <form action="" method="post">
                 <div class="form-group">
                     <!-- <label>Username</label> -->
-                    <h3>Gebruikersnaam</h3>
-                    <input type="text" name="username" class="form-control" value="" required>
+                    <h3>Email</h3>
+                    <input type="email" name="email" class="form-control" value="" required>
                 </div>    
                 <div class="form-group">
                     <!-- <label>Password</label> -->
