@@ -10,7 +10,7 @@ include "../../Class/HandyFunctions.php";
     <body>
         <div class="Header">
             <div class="Title">
-                <img src="../../Images/ImgLogo.png" width="200px">
+                <a href="../Activities/overview.php"><img src="../../Images/ImgLogo.png" width="200px"></a>
             </div>
             <nav class="Navheader">
                 <ul class="MenuHeader">

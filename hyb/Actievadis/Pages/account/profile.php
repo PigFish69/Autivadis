@@ -39,7 +39,7 @@ if (isset($_COOKIE['CurrUser'])) {
                 <h3 class="ulH3">Gebruikernaam:</h3>
                 <li><?php echo $user->getUsername();?></li>
                 <h3 class="ulH3">Email:</h3>
-                <li>voorbeeld@nu.nl</li>
+                <li><?php echo $user->getEmail();?></li>
                 <h3 class="ulH3">Huidig wachtwoord:</h3>
                 <form action="" method="post">
                 <input type="password" id="currently" name="currently" class="textFieldUL"><br>
