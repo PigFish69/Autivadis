@@ -44,49 +44,84 @@ if (isset($_POST['btnSubmit']))
 </head>
 <body>
     <div class="container">
-        <form action="#" method="post" enctype="multipart/form-data">
-        <table>
-            <tr>
-                <td>Naam</td>
-                <td><input type="text" name="txtName" required></td>
-            </tr>
-            <tr>
-                <td>Location</td>
-                <td><input type="text" name="txtLocation" required></td>
-            </tr>
-            <tr>
-                <td>Incl. voer</td>
-                <td><input type="checkbox" name="chbFood"></td>
-            </tr>
-            <tr>
-                <td>Prijs</td>
-                <td><input type="number" name="txtPrice" min="0" step=".01" required></td>
-            </tr>
-            <tr>
-                <td class="top">Omschrijving</td>
-                <td><textarea name="txtDescription" required></textarea></td>
-            </tr>
-            <tr>
-                <td>Afbeelding</td>
-                <td><input type="file" name="imgActivity" accept=".jpg, .jpeg, .png" required></td>
-            </tr>
-            <tr>
-                <td>Start tijd</td>
-                <td><input type="datetime-local" name="txtStartTime" required></td>
-            </tr>
-            <tr>
-                <td>Eind tijd</td>
-                <td><input type="datetime-local" name="txtEndTime" required></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" name="btnSubmit" value="Toevoegen" class="button">
-                </td>
-            </tr>
-        </table>    
-        </form>
-        <a href="admin.php"><button>Terug</button></a>
+        <div class="leftSide">
+            <form action="#" method="post" enctype="multipart/form-data">
+                <p class="pBlue">Voeg nog een activiteit toe</p>
+                <h1>Activiteiten toevoegen</h1>
+            <table>
+                <tr>
+                    <td>Naam</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="txtName" required></td>
+                </tr>
+                <tr>
+                    <td>Locatie</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="txtLocation" required></td>
+                </tr>
+                <tr>
+                    <td>Incl. eten</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="chbFood"></td>
+                </tr>
+                <tr>
+                    <td>Prijs</td>
+                </tr>
+                <tr>
+                    <td><input type="number" name="txtPrice" min="0" step=".01" required></td>
+                </tr>
+                <tr>
+                    <td class="top">Omschrijving</td>
+                </tr>
+                <tr>
+                    <td><textarea name="txtDescription" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>Afbeelding</td>
+                </tr>
+                <tr>
+                    <td><input type="file" name="imgActivity" accept=".jpg, .jpeg, .png" required></td>
+                </tr>
+                <tr>
+                    <td>Start tijd</td>
+                </tr>
+                <tr>
+                    <td><input type="datetime-local" name="txtStartTime" required></td>
+                </tr>
+                <tr>
+                    <td>Eind tijd</td>
+                </tr>
+                <tr>
+                    <td><input type="datetime-local" name="txtEndTime" required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="btnSubmit" value="Toevoegen" class="buttonTable">
+                    </td>
+                </tr>
+            </table>    
+            </form>
+            <a href="admin.php"><button class="terugButton">Terug</button></a>
+        </div>
+        <div class="Rightside">
+            <p class="pColor">Geen idee wat te doen?</p>
+            <h2>Hier een paar ideeën</h2>
+            <ul class="listActivityIdeas">
+                <li>Darten</li>
+                <li>Karten</li>
+                <li>Skeeleren</li>
+                <li>Bowlen</li>
+                <li>Golfen</li>
+                <li>Uit eten</li>
+                <li>Feestje</li>
+                <li>Buitenland bezoeken</li>
+                <li>Weekend weg</li>
+                <li>Workshop volgen</li>
+            </ul>
+        </div>
     </div>
 </body>
 <?php

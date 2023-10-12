@@ -57,7 +57,7 @@ body {
     align-items: center;
     margin-left: -40px;
     width: auto;
-    height: 250px;
+    height: 270px;
     padding: 20px;
     background-color: white;
     border-radius: 0 40px 0 40px;
@@ -72,12 +72,13 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin-top: 20px;
     margin-bottom: 10px;
-    width: 70px;
-    height: 25px;
+    width: 80px;
+    height: 30px;
     background-color: white;
     border-radius: 5px;
     border: 2px solid #0f132f;
     text-align: center;
+    padding: 5px;
 }
 
 .btn:hover
