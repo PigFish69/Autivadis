@@ -16,6 +16,11 @@ function getAllActivities()
 {
     return db_getData("SELECT * FROM activity");
 }
+function getAllActivitiesFromNow($current) 
+{
+
+    return db_getData("SELECT * FROM activity where startTime >= '$current'");
+}
 
 function getActivityById($activityId)
 {
