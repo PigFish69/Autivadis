@@ -9,7 +9,7 @@ function getActivitysBetweenTime($current, $next)
     if ($activities->num_rows > 0){
         return $activities;
     }
-    return "No activities found!"; 
+    return "Geen activiteiten gevonden"; 
 }
 
 function getAllActivities() 
@@ -27,7 +27,7 @@ function getActivityById($activityId)
     if ($activity->num_rows > 0) {
         return $activity;
     } else {
-        return "No activity found";
+        return "Geen activiteit gevonden";
     }
 }
 
@@ -95,6 +95,11 @@ function deleteActivityById($id)
     $query = "DELETE FROM `activity` WHERE `activity`.`Id` = " . $id;
     $queryDelSignups = "DELETE FROM signup WHERE activityId = " . $id;
     
+    if (getActivityById($id) == "Geen activiteit gevonden")
+    {
+        return;
+    }
+
     $activity = new activity(getActivityById($id));
     
     if (file_exists("../../Images/".$activity->getImage()))
@@ -102,6 +107,7 @@ function deleteActivityById($id)
         if (db_doQuery($query) && db_doQuery($queryDelSignups))
         {
             unlink("../../Images/".$activity->getImage());
+            echo "Activiteit is succesvol verwijdert";
         }
         
     }
