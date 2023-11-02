@@ -58,7 +58,11 @@ if (isset($_COOKIE['CurrUser'])) {
                     $activities = [];
                     while($activity = $getActivityID->fetch_assoc())
                     {
-                        array_push($activities, new Activity(getActivityById($activity['activityId'])));
+                        $activityClass = new Activity(getActivityById($activity['activityId']));
+                        if ($activityClass->getStartTime() >= date("Y-m-d"))
+                        {
+                            array_push($activities, $activityClass);
+                        }
                     }
                     foreach($activities as $activitiesData)
                     {

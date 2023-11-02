@@ -83,7 +83,7 @@ if (isset($_POST['btnSubmit']))
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" name="btnSubmit" value="Toevoegen" class="buttonTable">
+                        <input type="submit" name="btnSubmit" value="Aanpassen" class="buttonTable">
                     </td>
                 </tr>
             </table>    
